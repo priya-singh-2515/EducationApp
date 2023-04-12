@@ -7,6 +7,8 @@ import {
   ScrollView,
   StyleSheet,
 } from 'react-native';
+import { connect } from "react-redux";
+import { toggleTheme } from '../../stores/themeActions';
 
 import {
   IconButton,
@@ -17,13 +19,26 @@ import {
   ProfileRadioButton,
 } from '../../components';
 import {COLORS, FONTS, SIZES, icons, images} from '../../constants';
+import appTheme from '../../constants/theme';
 
-const Profile = () => {
-  const [newCourseNotification, setNewCourseNotification] =
-    React.useState(false);
+const Profile = ({appTheme, toggleTheme}) => {
+
+  const [newCourseNotification, setNewCourseNotification] = React.useState(false);
   const [studyReminder, setStudyReminder] = React.useState(false);
 
-  function renderHeader() {
+// Handler
+
+function toggleThemeHandler(){
+  if (appTheme?.name == "light"){
+    toggleTheme("dark")
+  }else{
+    toggleTheme("light")
+  }
+}
+
+// Render
+
+ function renderHeader() {
     return (
       <View
         style={{
@@ -34,8 +49,9 @@ const Profile = () => {
         }}>
         <Text
           style={{
+            color: appTheme?.textColor,
             ...FONTS.h1,
-            color: COLORS.black,
+            // color: COLORS.black,
           }}>
           Profile
         </Text>
@@ -43,8 +59,10 @@ const Profile = () => {
         <IconButton
           icon={icons.sun}
           iconStyle={{
-            tintColor: COLORS.black,
+            // tintColor: COLORS.black,
+            tintColor: appTheme?. tintColor
           }}
+          onPress={()=>toggleThemeHandler()}
         />
       </View>
     );
@@ -59,7 +77,8 @@ const Profile = () => {
           paddingHorizontal: SIZES.radius,
           paddingVertical: 20,
           borderRadius: SIZES.radius,
-          backgroundColor: COLORS.primary3,
+          // backgroundColor: COLORS.primary3,
+          backgroundColor:appTheme?.backgroundColor2
         }}>
         {/* Profile Image */}
         <TouchableOpacity
@@ -157,10 +176,11 @@ const Profile = () => {
                 ...FONTS.body4,
               }}>
               {' '}
-              85%{' '}
+              60%{' '}
             </Text>
           </View>
 
+              {/* Member */}
           <TextButton
             label="+ Become Member"
             contentContainerStyle={{
@@ -168,10 +188,12 @@ const Profile = () => {
               marginTop: SIZES.padding,
               paddingHorizontal: SIZES.radius,
               borderRadius: 20,
-              backgroundColor: COLORS.white,
+              // backgroundColor: COLORS.white,
+              backgroundColor:COLORS.appTheme?.backgroundColor4
             }}
             labelStyle={{
-              color: COLORS.primary,
+              // color: COLORS.primary,
+              color: appTheme?.textColor2
             }}
           />
         </View>
@@ -248,7 +270,8 @@ const Profile = () => {
     <View
       style={{
         flex: 1,
-        backgroundColor: COLORS.white,
+        // backgroundColor: COLORS.white,
+        backgroundColor: appTheme?.backgroundColor1
       }}>
       {/* Header */}
       {renderHeader()}
@@ -281,4 +304,17 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Profile;
+function mapStateProps(state){
+  return{
+    appTheme: state.appTheme,
+    error: state.error
+  }
+}
+
+function mapDispatchProps(dispatch){
+  return {
+    toggleTheme: (themeType)=> { return dispatch(toggleTheme(themeType))}
+  }
+}
+
+export default connect(mapStateProps, mapDispatchProps) (Profile);

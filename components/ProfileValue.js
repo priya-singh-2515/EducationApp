@@ -1,28 +1,30 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
+import { connect } from 'react-redux';
 
 import {COLORS, FONTS, SIZES, icons} from '../constants';
 
-const ProfileValue = ({icon, label, value, onPress}) => {
+const ProfileValue = ({icon, label, value, onPress, appTheme}) => {
   return (
     <TouchableOpacity
       style={{
         flexDirection: 'row',
         height: 80,
         alignItems: 'center',
-        justifyContent: 'space-between',
+        // justifyContent: 'space-between',
       }}
       omPress={onPress}>
       {/* Icon */}
       <View
         style={{
-          flexDirection: 'row',
+          // flexDirection: 'row',
           width: 40,
           height: 40,
           alignItems: 'center',
-          justifyContent: 'space-between',
+          // justifyContent: 'space-between',
           borderRadius: 20,
         //   backgroundColor: COLORS.black,
+        backgroundColor: appTheme?.backgroundColor3
         }}>
         <Image
           source={icon}
@@ -54,8 +56,9 @@ const ProfileValue = ({icon, label, value, onPress}) => {
         <Text
         numberOfLines={1}
           style={{
+            color: appTheme?.textColor,
             ...FONTS.h3,
-            color: COLORS.gray40,
+            // color: COLORS.gray40,
           }}>
           {value}
         </Text>
@@ -66,10 +69,25 @@ const ProfileValue = ({icon, label, value, onPress}) => {
         style={{
           width: 15,
           height: 15,
+          tintColor: appTheme?.tintColor
         }}
       />
     </TouchableOpacity>
   );
 };
 
-export default ProfileValue;
+
+function mapStateProps(state){
+  return{
+    appTheme: state.appTheme
+  }
+}
+
+function mapDispatchProps(dispatch){
+  return {
+   
+  }
+}
+
+export default connect(mapStateProps, mapDispatchProps) (ProfileValue);
+

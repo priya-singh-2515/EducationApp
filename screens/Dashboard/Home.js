@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, ImageBackground, Image, ScrollView} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
+import { useNavigation } from "@react-navigation/native";
 import {
   IconButton,
   TextButton,
@@ -40,6 +41,9 @@ const Section = ({containerStyle, title, onPress, children}) => {
   );
 };
 const Home = () => {
+
+  const navigation = useNavigation();
+
   function renderHeader() {
     return (
       <View
@@ -164,12 +168,14 @@ const Home = () => {
           }}
           renderItem={({item, index}) => (
             <CategoryCard
+              SharedElementPrefix="Home"
               category={item}
               containerStyle={{
                 marginLeft: index == 0 ? SIZES.padding : SIZES.base,
                 marginRight:
                   index == dummyData.categories.length - 1 ? SIZES.padding : 0,
               }}
+              onPress={()=>navigation.navigate("CourseListing", { category: item, sharedElementPrefix: "Home"})}
             />
           )}
         />

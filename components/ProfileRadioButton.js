@@ -1,113 +1,133 @@
-import React from "react";
-import {
-    View,
-    Text,
-    Image,
-    TouchableOpacity,
-    Animated
-} from 'react-native';
+import React from 'react';
+import {View, Text, Image, TouchableOpacity, Animated} from 'react-native';
+import { connect } from 'react-redux';
 
-import { COLORS, FONTS, SIZES} from '../constants';
-import { color } from "react-native-reanimated";
+import {COLORS, FONTS, SIZES} from '../constants';
+import {color} from 'react-native-reanimated';
 
-const ProfileRadioButton = ({ icon, label, isSelected, onPress })=>{
+const ProfileRadioButton = ({icon, label, isSelected, onPress, appTheme}) => {
+  const radioAnimated = React.useRef(new Animated.Value(0)).current;
 
-    const radioAnimated = React.useRef(new Animated.Value(0)).current;
+  const circleAnimated = radioAnimated.interpolate({
+    inputRange: [0, 17],
+    outputRange: [COLORS.gray40, COLORS.primary],
+  });
 
-    const circleAnimated = radioAnimated.interpolate({
-        inputRange: [0,17],
-        outputRange: [COLORS.gray40, COLORS.primary]
-    })
+  const lineColorAnimated = radioAnimated.interpolate({
+    inputRange: [0, 17],
+    outputRange: [COLORS.additionalColor4, COLORS.additionalColor13],
+  });
 
-    const lineColorAnimated = radioAnimated.interpolate({
-        inputRange: [0, 17],
-        outputRange: [COLORS.additionalColor4, COLORS.additionalColor13]
-    })
-    return(
-        <View 
-         style={{
-            flexDirection: 'row',
-            height: 80,
-            alignItems:'center'
-         }}>
-            {/* Icon */}
-            <View 
-             style={{
-                width: 40,
-                height: 40,
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderRadius: 20,
-                backgroundColor: COLORS.additionalColor11
-             }}>
- 
-            <Image
-             source={icon}
-             resizeMode="contain"
-             style={{
-                width:25,
-                height:25,
-                tintColor:COLORS.primary
-             }}/>
-            </View>
+  React.useEffect(()=>{
+    if (isSelected){
+      Animated.timing(radioAnimated,{
+        toValue: 17,
+        duration: 300,
+        useNativeDriver: false
+      }).start();
+    }else{
+      Animated.timing(radioAnimated,{
+        toValue:0,
+        duration:300,
+        useNativeDriver: false
+      }).start();
+    }
+  },[isSelected])
 
-            {/* Label */}
-            <View
-             style={{
-                flex:1,
-                marginLeft: SIZES.radius
-             }}>
-                <Text
-                  style={{
-                    ...FONTS.h3,
-                    color:COLORS.gray30
-                  }}>
-                    {label}
-                </Text>
-            </View>
+  return (
+    <View
+      style={{
+        flexDirection: 'row',
+        height: 80,
+        alignItems: 'center',
+      }}>
+      {/* Icon */}
+      <View
+        style={{
+          width: 40,
+          height: 40,
+          alignItems: 'center',
+          justifyContent: 'center',
+          borderRadius: 20,
+          // backgroundColor: COLORS.additionalColor11,
+          backgroundColor: appTheme?.backgroundColor3
+        }}>
+        <Image
+          source={icon}
+          resizeMode="contain"
+          style={{
+            width: 25,
+            height: 25,
+            tintColor: COLORS.primary,
+          }}
+        />
+      </View>
 
-            {/* Radio Button */}
+      {/* Label */}
+      <View
+        style={{
+          flex: 1,
+          marginLeft: SIZES.radius,
+        }}>
+        <Text
+          style={{
+            color: appTheme?.textColor,
+            ...FONTS.h3,
+            // color: COLORS.gray30,
+          }}>
+          {label}
+        </Text>
+      </View>
 
-            <TouchableOpacity
-              style={{
-                width:40,
-                height:40,
-                alignItems:'center',
-                justifyContent:'center'
-              }}
-              onPress={onPress}
-              >
+      {/* Radio Button */}
 
-                <Animated.View
-                 style={{
-                    width:"100%",
-                    height:5,
-                    borderRadius:3,
-                    // backgroundColor:COLORS.primary 
-                    // // Animated
-                    backgroundColor: lineColorAnimated
-                 }}
-                 />
+      <TouchableOpacity
+        style={{
+          width: 40,
+          height: 40,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+        onPress={onPress}>
+        <Animated.View
+          style={{
+            width: '100%',
+            height: 5,
+            borderRadius: 3,
+            // backgroundColor:COLORS.primary
+            // // Animated
+            backgroundColor: lineColorAnimated,
+          }}
+        />
 
-                 <Animated.View
-                   style={{
-                    position:'absolute',
-                    // left:0, //Animate
-                    left: radioAnimated,
-                    width: 25,
-                    height: 25,
-                    borderRadius: 15,
-                    borderWidth: 5,
-                    // borderColor: COLORS.primary3, //Animated
-                    borderColor: circleAnimated,
-                    backgroundColor:COLORS.white
-                   }}
-                 />
+        <Animated.View
+          style={{
+            position: 'absolute',
+            // left:0, //Animate
+            left: radioAnimated,
+            width: 25,
+            height: 25,
+            borderRadius: 15,
+            borderWidth: 5,
+            // borderColor: COLORS.primary3, //Animated
+            borderColor: circleAnimated,
+            // backgroundColor: COLORS.white,
+            backgroundColor: appTheme?.backgroundColor1
+          }}
+        />
+      </TouchableOpacity>
+    </View>
+  );
+};
 
-            </TouchableOpacity>
-
-        </View>
-    )
+function mapStateProps(state) {
+  return {
+    appTheme: state.appTheme,
+  };
 }
 
-export default ProfileRadioButton;
+function mapDispatchProps(dispatch) {
+  return {};
+}
+
+export default connect(mapStateProps, mapDispatchProps)(ProfileRadioButton);
