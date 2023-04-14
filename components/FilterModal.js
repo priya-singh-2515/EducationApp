@@ -15,7 +15,8 @@ import Animated,{
 
 import {
     TextButton,
-    LineDivider
+    LineDivider,
+    TwoPointSlider
 } from '../components';
 import {
     COLORS,
@@ -66,7 +67,8 @@ const ClassTypeOption = ({ containerStyle, classType, isSelected, onPress })=>{
 }
 
 const ClassLevelOption = ({ containerStyle, classLevel, isLastItem, isSelected, onPress })=>{
-    return(<>
+    return(
+    <>
         <TouchableOpacity
           style={{
             flexDirection: 'row',
@@ -132,6 +134,52 @@ const FilterModal = ({ FilterModalSharedValue1, FilterModalSharedValue2 }) => {
             ]
         }
     })
+
+    function renderFooter(){
+       return(
+        <View
+           style={{
+            flexDirection:'row',
+            height: 50,
+            marginBottom: 30,
+            paddingHorizontal: SIZES.padding
+           }}
+        >
+            {/* Reset */}
+            <TextButton
+              label="Reset"
+              contentContainerStyle={{
+                flex:1,
+                borderRadius: SIZES.radius,
+                borderWidth: 1,
+                backgroundColor: null
+              }}
+              labelStyle={{
+                color: COLORS.black,
+                ...FONTS.h3
+              }}
+            />
+
+            {/* Apply */}
+            <TextButton
+              label="Apply"
+              contentContainerStyle={{
+                flex: 1,
+                marginLeft: SIZES.radius,
+                borderRadius: SIZES.radius,
+                borderWidth: 2,
+                borderColor: COLORS.primary,
+                backgroundColor: COLORS.primary
+              }}
+              labelStyle={{
+                color: COLORS.white,
+                ...FONTS.h3
+              }}
+            />
+        </View>
+       )
+    }
+
     return (
         // Main Container
         <Animated.View
@@ -245,7 +293,7 @@ const FilterModal = ({ FilterModalSharedValue1, FilterModalSharedValue2 }) => {
                                             marginLeft: index == 0 ? 0 : SIZES.base
                                          }}
                                          onPress={()=>{
-                                            selectedClassType(item.id)
+                                            setSelectedClassType(item.id)
                                          }}
                                         />
                                     )
@@ -277,9 +325,9 @@ const FilterModal = ({ FilterModalSharedValue1, FilterModalSharedValue2 }) => {
                                  key={`ClassType-${index}`}
                                  classLevel={item}
                                  isLastItem={index == constants.class_levels.length -1}
-                                 isSelected={selectedClassLevel == item ?.id}
+                                 isSelected={selectedClassLevel == item?.id}
                                  onPress={()=>{
-                                    selectedClassLevel(item.id)
+                                    setSelectedClassLevel(item.id)
                                  }}
                                 />
                             )
@@ -320,14 +368,14 @@ const FilterModal = ({ FilterModalSharedValue1, FilterModalSharedValue2 }) => {
                                         borderWidth: 1,
                                         borderRadius: SIZES.radius,
                                         borderColor: COLORS.gray20,
-                                        backgroundColor: item ?.id == selectedCreatedWithin ? COLORS.primary3 : null
+                                        backgroundColor: item?.id == selectedCreatedWithin ? COLORS.primary3 : null
                                      }}
                                      labelStyle={{
-                                        color: item ?.id == selectedCreatedWithin ? COLORS.white :COLORS.black,
+                                        color: item?.id == selectedCreatedWithin ? COLORS.white :COLORS.black,
                                         ...FONTS.body3
                                      }}
                                      onPress={()=>{
-                                        selectedCreatedWithin(item.id)
+                                        setSelectedCreatedWithin(item.id)
                                      }}
                                     />
                                 )
@@ -346,20 +394,33 @@ const FilterModal = ({ FilterModalSharedValue1, FilterModalSharedValue2 }) => {
                                 >
                                     Created Within
                                 </Text>
+                                <View
+                                style={{
+                                    alignItems:'center'
+                                }}
+                                >
+                                    <TwoPointSlider
+                                      values={[20, 50]}
+                                      min={15}
+                                      max={60}
+                                      postfix="min"
+                                      onValuesChange={(values)=> console.log(values)}
+                                    />
 
-                            </View>
+                                </View>
+
                             
+                            </View>                          
                         </View>
-
                       </View>
-                     
+
 
                 </ScrollView>
 
+                {/* Footer */}
+                {renderFooter()}
               </Animated.View>
-
          </Animated.View>
-
         </Animated.View>
 
 

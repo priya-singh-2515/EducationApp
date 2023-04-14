@@ -41,6 +41,7 @@ const ProfileRadioButton = ({icon, label, isSelected, onPress, appTheme}) => {
         height: 80,
         alignItems: 'center',
       }}>
+
       {/* Icon */}
       <View
         style={{
@@ -120,14 +121,14 @@ const ProfileRadioButton = ({icon, label, isSelected, onPress, appTheme}) => {
   );
 };
 
-function mapStateProps(state) {
+function mapStateToProps(state) {
   return {
     appTheme: state.appTheme,
   };
 }
 
-function mapDispatchProps(dispatch) {
+function mapDispatchToProps(dispatch) {
   return {};
 }
 
-export default connect(mapStateProps, mapDispatchProps)(ProfileRadioButton);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileRadioButton);

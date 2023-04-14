@@ -99,7 +99,7 @@ const Search = () => {
           }}
           renderItem={({item, index}) => (
             <CategoryCard
-            SharedElementPrefix="Search"
+            sharedElementPrefix="Search"
               category={item}
               containerStyle={{
                 height: 130,

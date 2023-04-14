@@ -31,7 +31,8 @@ export function toggleTheme(themeType){
                 dispatch(toggleThemeSuccess(lightTheme))
                 break;  
             default:
-                dispatch(toggleThemeFailure({error: "Invalid theme type"}))              
+                dispatch(toggleThemeFailure({error: "Invalid theme type"}))       
+                break;       
         }
     }
 }

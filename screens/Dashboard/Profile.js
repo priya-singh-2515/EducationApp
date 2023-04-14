@@ -19,7 +19,7 @@ import {
   ProfileRadioButton,
 } from '../../components';
 import {COLORS, FONTS, SIZES, icons, images} from '../../constants';
-import appTheme from '../../constants/theme';
+// import appTheme from '../../constants/theme';
 
 const Profile = ({appTheme, toggleTheme}) => {
 
@@ -189,7 +189,7 @@ function toggleThemeHandler(){
               paddingHorizontal: SIZES.radius,
               borderRadius: 20,
               // backgroundColor: COLORS.white,
-              backgroundColor:COLORS.appTheme?.backgroundColor4
+              backgroundColor: appTheme?.backgroundColor4
             }}
             labelStyle={{
               // color: COLORS.primary,
@@ -273,6 +273,7 @@ function toggleThemeHandler(){
         // backgroundColor: COLORS.white,
         backgroundColor: appTheme?.backgroundColor1
       }}>
+
       {/* Header */}
       {renderHeader()}
 
@@ -304,17 +305,17 @@ const styles = StyleSheet.create({
   },
 });
 
-function mapStateProps(state){
+function mapStateToProps(state){
   return{
     appTheme: state.appTheme,
     error: state.error
   }
 }
 
-function mapDispatchProps(dispatch){
+function mapDispatchToProps(dispatch){
   return {
     toggleTheme: (themeType)=> { return dispatch(toggleTheme(themeType))}
   }
 }
 
-export default connect(mapStateProps, mapDispatchProps) (Profile);
+export default connect(mapStateToProps, mapDispatchToProps) (Profile);

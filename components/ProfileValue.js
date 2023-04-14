@@ -14,6 +14,7 @@ const ProfileValue = ({icon, label, value, onPress, appTheme}) => {
         // justifyContent: 'space-between',
       }}
       omPress={onPress}>
+
       {/* Icon */}
       <View
         style={{
@@ -36,6 +37,7 @@ const ProfileValue = ({icon, label, value, onPress, appTheme}) => {
           }}
         />
       </View>
+
       {/* Label & Value */}
 
       <View
@@ -54,7 +56,7 @@ const ProfileValue = ({icon, label, value, onPress, appTheme}) => {
         )}
 
         <Text
-        numberOfLines={1}
+        // numberOfLines={1}
           style={{
             color: appTheme?.textColor,
             ...FONTS.h3,
@@ -63,6 +65,7 @@ const ProfileValue = ({icon, label, value, onPress, appTheme}) => {
           {value}
         </Text>
       </View>
+
       {/* Icon */}
       <Image
         source={icons.right_arrow}
@@ -77,17 +80,17 @@ const ProfileValue = ({icon, label, value, onPress, appTheme}) => {
 };
 
 
-function mapStateProps(state){
+function mapStateToProps(state){
   return{
     appTheme: state.appTheme
   }
 }
 
-function mapDispatchProps(dispatch){
+function mapDispatchToProps(dispatch){
   return {
    
   }
 }
 
-export default connect(mapStateProps, mapDispatchProps) (ProfileValue);
+export default connect(mapStateToProps, mapDispatchToProps) (ProfileValue);
 

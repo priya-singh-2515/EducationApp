@@ -5,7 +5,7 @@ import {
   Image,
   FlatList,
   StyleSheet,
-  BackHandler,
+  // BackHandler,
 } from 'react-native';
 import {SharedElement} from 'react-navigation-shared-element';
 
@@ -18,7 +18,7 @@ import Animated, {
   withDelay,
   withTiming,
   runOnJS,
-  event,
+  // event,
 } from 'react-native-reanimated';
 
 import {IconButton, HorizontalCourseCard, LineDivider, FilterModal} from '../../components';
@@ -35,7 +35,7 @@ const CourseListing = ({navigation, route}) => {
 
   const FlatListRef = React.useRef()
   const scrollY = useSharedValue(0)
-  const onscroll = useAnimatedScrollHandler((event)=>{
+  const onScroll = useAnimatedScrollHandler((event)=>{
     scrollY.value=event.contentOffset.y;
 
   })
@@ -109,6 +109,7 @@ const CourseListing = ({navigation, route}) => {
           height: 250,
           overflow: 'hidden',
         }, headerHeightAnimatedStyle]}>
+          
         {/* background Image */}
         <SharedElement
           id={`${sharedElementPrefix}-CategoryCard-Bg-${category?.id}`}
@@ -125,6 +126,7 @@ const CourseListing = ({navigation, route}) => {
         </SharedElement>
 
         {/* Title */}
+
         <Animated.View
          style={[{
           position:'absolute',
@@ -200,7 +202,7 @@ const CourseListing = ({navigation, route}) => {
                     runOnJS(backHandler)();
                   })
               },100)
-            }else{
+            } else {
               backHandler()
             }  
             }}
@@ -240,7 +242,7 @@ const CourseListing = ({navigation, route}) => {
            showsHorizontalScrollIndicator={false}
            scrollEventThrottle={16}
            keyboardDismissMode="on-drag"
-           onScroll={onscroll}
+           onScroll={onScroll}
            ListHeaderComponent={
             <View
               style={{
@@ -273,7 +275,8 @@ const CourseListing = ({navigation, route}) => {
                 height: 40,
                 alignItems: 'center',
                 justifyContent:'center',
-                borderRadius: COLORS.primary
+                borderRadius: 10,
+                backgroundColor: COLORS.primary
                }}
 
                onPress={()=>{

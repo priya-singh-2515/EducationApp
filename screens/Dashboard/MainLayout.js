@@ -158,7 +158,7 @@ const MainLayout = ({appTheme}) => {
       <View
         style={{
           // marginBottom: 20,
-          marginBottom: SIZES.height > 800 ? 20 : 5, 
+          paddingBottom: SIZES.height > 800 ? 20 : 5, 
           paddingHorizontal: SIZES.padding,
           paddingVertical: SIZES.radius,
           backgroundColor: appTheme?.backgroundColor1
@@ -190,16 +190,16 @@ const MainLayout = ({appTheme}) => {
 };
 
 
-function mapStateProps(state) {
+function mapStateToProps(state) {
   return {
     appTheme: state.appTheme,
   };
 }
 
-function mapDispatchProps(dispatch) {
+function mapDispatchToProps(dispatch) {
   return {};
 }
 
-export default connect(mapStateProps, mapDispatchProps)(MainLayout);
+export default connect(mapStateToProps, mapDispatchToProps)(MainLayout);
 
 

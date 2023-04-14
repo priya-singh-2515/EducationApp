@@ -157,7 +157,7 @@ const Home = () => {
     return (
       <Section title="Categories">
         <FlatList
-        listKey={'categories'}
+        // listKey={'categories'}
           horizontal
           data={dummyData.categories}
           listkey="Categories"
@@ -168,7 +168,7 @@ const Home = () => {
           }}
           renderItem={({item, index}) => (
             <CategoryCard
-              SharedElementPrefix="Home"
+              sharedElementPrefix="Home"
               category={item}
               containerStyle={{
                 marginLeft: index == 0 ? SIZES.padding : SIZES.base,

@@ -11,7 +11,7 @@ import { SharedElement } from "react-navigation-shared-element";
 
 import {COLORS,FONTS,SIZES} from "../constants";
 
-const CategoryCard=({category,containerStyle, onPress, SharedElementPrefix })=>{
+const CategoryCard=({category,containerStyle, onPress, sharedElementPrefix })=>{
     return(
         <TouchableOpacity
         style={{
@@ -24,7 +24,7 @@ const CategoryCard=({category,containerStyle, onPress, SharedElementPrefix })=>{
 
         {/* Image background  */}
             <SharedElement
-                id={`${SharedElementPrefix}-CategoryCard-Bg-${category?.id}`}
+                id={`${sharedElementPrefix}-CategoryCard-Bg-${category?.id}`}
                 style={[StyleSheet.absoluteFillObject]}
             >
                 <Image
@@ -37,6 +37,7 @@ const CategoryCard=({category,containerStyle, onPress, SharedElementPrefix })=>{
                   }}
                 />
             </SharedElement>
+
             {/* <ImageBackground
                 source={category?.thumbnail}
                 resizeMode="cover"
@@ -73,7 +74,7 @@ const CategoryCard=({category,containerStyle, onPress, SharedElementPrefix })=>{
              }}
              >
                 <SharedElement
-                  id={`${SharedElementPrefix}-CategoryCard-Title-${category?.id}`}
+                  id={`${sharedElementPrefix}-CategoryCard-Title-${category?.id}`}
                   style={[StyleSheet.absoluteFillObject]}
                 >
                 <Text
