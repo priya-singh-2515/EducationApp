@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 import {COLORS, FONTS, SIZES, icons} from '../constants';
 
@@ -14,7 +14,6 @@ const ProfileValue = ({icon, label, value, onPress, appTheme}) => {
         // justifyContent: 'space-between',
       }}
       omPress={onPress}>
-
       {/* Icon */}
       <View
         style={{
@@ -24,8 +23,8 @@ const ProfileValue = ({icon, label, value, onPress, appTheme}) => {
           alignItems: 'center',
           // justifyContent: 'space-between',
           borderRadius: 20,
-        //   backgroundColor: COLORS.black,
-        backgroundColor: appTheme?.backgroundColor3
+          //   backgroundColor: COLORS.black,
+          backgroundColor: appTheme?.backgroundColor3,
         }}>
         <Image
           source={icon}
@@ -56,7 +55,7 @@ const ProfileValue = ({icon, label, value, onPress, appTheme}) => {
         )}
 
         <Text
-        // numberOfLines={1}
+          // numberOfLines={1}
           style={{
             color: appTheme?.textColor,
             ...FONTS.h3,
@@ -72,25 +71,21 @@ const ProfileValue = ({icon, label, value, onPress, appTheme}) => {
         style={{
           width: 15,
           height: 15,
-          tintColor: appTheme?.tintColor
+          tintColor: appTheme?.tintColor,
         }}
       />
     </TouchableOpacity>
   );
 };
 
-
-function mapStateToProps(state){
-  return{
-    appTheme: state.appTheme
-  }
-}
-
-function mapDispatchToProps(dispatch){
+function mapStateToProps(state) {
   return {
-   
-  }
+    appTheme: state.appTheme,
+  };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (ProfileValue);
+function mapDispatchToProps(dispatch) {
+  return {};
+}
 
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileValue);

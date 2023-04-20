@@ -22,5 +22,5 @@ export {
   ProfileValue,
   ProfileRadioButton,
   FilterModal,
-  TwoPointSlider
+  TwoPointSlider,
 };

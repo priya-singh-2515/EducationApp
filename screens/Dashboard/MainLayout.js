@@ -1,13 +1,13 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, Image, Animated} from 'react-native';
 import {Shadow} from 'react-native-shadow-2';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 import {Home, Profile, Search} from '../../screens';
 import {COLORS, SIZES, FONTS, constants} from '../../constants';
 
-const bottom_tabs = constants.bottom_tabs.map(bottom_tabs => ({
-  ...bottom_tabs,
+const bottom_tabs = constants.bottom_tabs.map(bottom_tab => ({
+  ...bottom_tab,
   ref: React.createRef(),
 }));
 
@@ -67,10 +67,10 @@ const Tabs = ({scrollX, onBottomTabPress}) => {
         },
       );
     });
-  }, [containerRef.current]);
+  }, []);
 
   return (
-    <View  ref={containerRef} style={{flex: 1, flexDirection: 'row'}}>
+    <View ref={containerRef} style={{flex: 1, flexDirection: 'row'}}>
       {/* Tab indicator */}
       {measureLayout.length > 0 && (
         <TabIndicator measureLayout={measureLayout} scrollX={scrollX} />
@@ -88,8 +88,7 @@ const Tabs = ({scrollX, onBottomTabPress}) => {
               alignItems: 'center',
               justifyContent: 'center',
             }}
-            onPress={() => onBottomTabPress(index)}
-            >
+            onPress={() => onBottomTabPress(index)}>
             <Image
               source={item.icon}
               resizeMode="contain"
@@ -142,9 +141,9 @@ const MainLayout = ({appTheme}) => {
                   height: SIZES.height,
                   width: SIZES.width,
                 }}>
-                {item.label == constants.screens.home && <Home />}
-                {item.label == constants.screens.search && <Search />}
-                {item.label == constants.screens.profile && <Profile />}
+                {item.label === constants.screens.home && <Home />}
+                {item.label === constants.screens.search && <Search />}
+                {item.label === constants.screens.profile && <Profile />}
               </View>
             );
           }}
@@ -158,10 +157,10 @@ const MainLayout = ({appTheme}) => {
       <View
         style={{
           // marginBottom: 20,
-          paddingBottom: SIZES.height > 800 ? 20 : 5, 
+          paddingBottom: SIZES.height > 800 ? 20 : 5,
           paddingHorizontal: SIZES.padding,
           paddingVertical: SIZES.radius,
-          backgroundColor: appTheme?.backgroundColor1
+          backgroundColor: appTheme?.backgroundColor1,
         }}>
         <Shadow style={{width: SIZES.width - SIZES.padding * 2, height: 70}}>
           {/* <Shadow size={[SIZES.width - (SIZES.padding*2),85]}> */}
@@ -170,7 +169,7 @@ const MainLayout = ({appTheme}) => {
               flex: 1,
               borderRadius: SIZES.radius,
               // backgroundColor: COLORS.primary3,
-              backgroundColor: appTheme?.backgroundColor2
+              backgroundColor: appTheme?.backgroundColor2,
             }}>
             <Tabs scrollX={scrollX} onBottomTabPress={onBottomTabPress} />
           </View>
@@ -189,7 +188,6 @@ const MainLayout = ({appTheme}) => {
   );
 };
 
-
 function mapStateToProps(state) {
   return {
     appTheme: state.appTheme,
@@ -201,5 +199,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainLayout);
-
-

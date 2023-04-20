@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, ImageBackground, Image, ScrollView} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
-import { useNavigation } from "@react-navigation/native";
+import {useNavigation} from '@react-navigation/native';
 import {
   IconButton,
   TextButton,
@@ -24,7 +24,7 @@ const Section = ({containerStyle, title, onPress, children}) => {
           flexDirection: 'row',
           paddingHorizontal: SIZES.padding,
         }}>
-        <Text style={{flex: 1, ...FONTS.h2, color:COLORS.black}}>{title}</Text>
+        <Text style={{flex: 1, ...FONTS.h2, color: COLORS.black}}>{title}</Text>
         <TextButton
           contentContainerStyle={{
             width: 80,
@@ -41,7 +41,6 @@ const Section = ({containerStyle, title, onPress, children}) => {
   );
 };
 const Home = () => {
-
   const navigation = useNavigation();
 
   function renderHeader() {
@@ -56,7 +55,9 @@ const Home = () => {
         }}>
         {/* Greetings */}
         <View style={{flex: 1}}>
-          <Text style={{...FONTS.h2,color: COLORS.black}}>Hello, Education App</Text>
+          <Text style={{...FONTS.h2, color: COLORS.black}}>
+            Hello, Education App
+          </Text>
           <Text style={{color: COLORS.gray50, ...FONTS.body3}}>
             Wednesday,05th April 2023
           </Text>
@@ -128,7 +129,7 @@ const Home = () => {
   function renderCourses() {
     return (
       <FlatList
-      listKey={'courses'}
+        listKey={'courses'}
         horizontal
         data={dummyData.courses_list_1}
         listkey="Courses"
@@ -140,9 +141,9 @@ const Home = () => {
         renderItem={({item, index}) => (
           <VerticalCourseCard
             containerStyle={{
-              marginLeft: index == 0 ? SIZES.padding : SIZES.radius,
+              marginLeft: index === 0 ? SIZES.padding : SIZES.radius,
               marginRight:
-                index == dummyData.courses_list_1.length - 1
+                index === dummyData.courses_list_1.length - 1
                   ? SIZES.padding
                   : 0,
             }}
@@ -157,7 +158,7 @@ const Home = () => {
     return (
       <Section title="Categories">
         <FlatList
-        // listKey={'categories'}
+          // listKey={'categories'}
           horizontal
           data={dummyData.categories}
           listkey="Categories"
@@ -171,11 +172,16 @@ const Home = () => {
               sharedElementPrefix="Home"
               category={item}
               containerStyle={{
-                marginLeft: index == 0 ? SIZES.padding : SIZES.base,
+                marginLeft: index === 0 ? SIZES.padding : SIZES.base,
                 marginRight:
-                  index == dummyData.categories.length - 1 ? SIZES.padding : 0,
+                  index === dummyData.categories.length - 1 ? SIZES.padding : 0,
               }}
-              onPress={()=>navigation.navigate("CourseListing", { category: item, sharedElementPrefix: "Home"})}
+              onPress={() =>
+                navigation.navigate('CourseListing', {
+                  category: item,
+                  sharedElementPrefix: 'Home',
+                })
+              }
             />
           )}
         />
@@ -205,17 +211,16 @@ const Home = () => {
               course={item}
               containerStyle={{
                 marginVertical: SIZES.padding,
-                marginTop: index == 0  ? SIZES.radius: SIZES.padding,
+                marginTop: index === 0 ? SIZES.radius : SIZES.padding,
               }}
             />
-           
           )}
-
-          ItemSeparatorComponent={()=>(
+          ItemSeparatorComponent={() => (
             <LineDivider
-            lineStyle={{
-              backgroundColor:COLORS.gray20
-            }}/>
+              lineStyle={{
+                backgroundColor: COLORS.gray20,
+              }}
+            />
           )}
         />
       </Section>

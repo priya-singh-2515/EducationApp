@@ -46,15 +46,14 @@ const App = () => {
             headerShown: false,
           }}
           initialRouteName={'Dashboard'}
-          detachInactiveScreens= {false}
-        >
+          detachInactiveScreens={false}>
           <Stack.Screen name="Dashboard" component={MainLayout} />
 
           <Stack.Screen
-                      name="CourseListing"
-                      component={CourseListing}
-                      options={()=> options}
-                />
+            name="CourseListing"
+            component={CourseListing}
+            options={() => options}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

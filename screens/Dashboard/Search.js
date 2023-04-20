@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text, Image, TextInput} from 'react-native';
 import {Shadow} from 'react-native-shadow-2';
-import {FlatList, ScrollView} from 'react-native-gesture-handler';
-import { useNavigation } from "@react-navigation/native"
+import {FlatList} from 'react-native-gesture-handler';
+import {useNavigation} from '@react-navigation/native';
 import Animated, {
   Extrapolate,
   interpolate,
@@ -54,9 +54,9 @@ const Search = () => {
               contentContainerStyle={{
                 paddingVertical: SIZES.radius,
                 paddingHorizontal: SIZES.padding,
-                marginLeft: index == 0 ? SIZES.padding : SIZES.radius,
+                marginLeft: index === 0 ? SIZES.padding : SIZES.radius,
                 marginRight:
-                  index == dummyData.top_searches.length - 1
+                  index === dummyData.top_searches.length - 1
                     ? SIZES.padding
                     : 0,
                 borderRadius: SIZES.radius,
@@ -99,15 +99,21 @@ const Search = () => {
           }}
           renderItem={({item, index}) => (
             <CategoryCard
-            sharedElementPrefix="Search"
+              sharedElementPrefix="Search"
               category={item}
               containerStyle={{
                 height: 130,
                 width: (SIZES.width - SIZES.padding * 2 - SIZES.radius) / 2,
                 marginTop: SIZES.radius,
-                marginLeft: (index + 1) % 2 == 0 ? SIZES.radius : SIZES.padding,
+                marginLeft:
+                  (index + 1) % 2 === 0 ? SIZES.radius : SIZES.padding,
               }}
-              onPress={()=> navigation.navigate("CourseListing", { category: item, sharedElementPrefix: "Search"})}
+              onPress={() =>
+                navigation.navigate('CourseListing', {
+                  category: item,
+                  sharedElementPrefix: 'Search',
+                })
+              }
             />
           )}
         />
@@ -115,7 +121,7 @@ const Search = () => {
     );
   }
 
-  function renderSearchBar() {
+  function RenderSearchBar() {
     const inputRange = [0, 50];
 
     const searchBarAnimatedStyle = useAnimatedStyle(() => {
@@ -220,7 +226,7 @@ const Search = () => {
       </Animated.ScrollView>
 
       {/* Search Bar */}
-      {renderSearchBar()}
+      <RenderSearchBar />
     </View>
   );
 };

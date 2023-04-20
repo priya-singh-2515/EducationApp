@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  Image,
-  FlatList,
-  StyleSheet,
-  // BackHandler,
-} from 'react-native';
+import {View, Text, Image, FlatList, StyleSheet} from 'react-native';
 import {SharedElement} from 'react-navigation-shared-element';
 
 import Animated, {
@@ -21,29 +14,31 @@ import Animated, {
   // event,
 } from 'react-native-reanimated';
 
-import {IconButton, HorizontalCourseCard, LineDivider, FilterModal} from '../../components';
+import {
+  IconButton,
+  HorizontalCourseCard,
+  LineDivider,
+  FilterModal,
+} from '../../components';
 
 import {COLORS, FONTS, SIZES, images, icons, dummyData} from '../../constants';
-import { transform } from '@babel/core';
 
-const AnimatedFlatList = Animated.createAnimatedComponent(FlatList)
+const AnimatedFlatList = Animated.createAnimatedComponent(FlatList);
 
 const HEADER_HEIGHT = 250;
 
 const CourseListing = ({navigation, route}) => {
   const {category, sharedElementPrefix} = route.params;
 
-  const FlatListRef = React.useRef()
-  const scrollY = useSharedValue(0)
-  const onScroll = useAnimatedScrollHandler((event)=>{
-    scrollY.value=event.contentOffset.y;
-
-  })
+  const FlatListRef = React.useRef();
+  const scrollY = useSharedValue(0);
+  const onScroll = useAnimatedScrollHandler(event => {
+    scrollY.value = event.contentOffset.y;
+  });
 
   const headerSharedValue = useSharedValue(80);
-  const FilterModalSharedValue1 = useSharedValue(SIZES.height)
-  const FilterModalSharedValue2 = useSharedValue(SIZES.height)
-
+  const FilterModalSharedValue1 = useSharedValue(SIZES.height);
+  const FilterModalSharedValue2 = useSharedValue(SIZES.height);
 
   // Handler
 
@@ -52,8 +47,8 @@ const CourseListing = ({navigation, route}) => {
   }
 
   // Render
-  function renderHeader() {
-    const inputRange = [0, HEADER_HEIGHT - 50]
+  function RenderHeader() {
+    const inputRange = [0, HEADER_HEIGHT - 50];
     headerSharedValue.value = withDelay(500, withTiming(0, {duration: 500}));
 
     const headerFadeAnimatedStyle = useAnimatedStyle(() => {
@@ -72,44 +67,66 @@ const CourseListing = ({navigation, route}) => {
       };
     });
 
-    const headerHeightAnimatedStyle = useAnimatedStyle(()=>{
-      return{
-        height: interpolate(scrollY.value, inputRange, [HEADER_HEIGHT, 120], Extrapolate.CLAMP)
-      }
-    })
+    const headerHeightAnimatedStyle = useAnimatedStyle(() => {
+      return {
+        height: interpolate(
+          scrollY.value,
+          inputRange,
+          [HEADER_HEIGHT, 120],
+          Extrapolate.CLAMP,
+        ),
+      };
+    });
 
-    const headerHideOnScrollAnimatedStyle = useAnimatedStyle(()=>{
-      return{
-        opacity: interpolate(scrollY.value, [80, 0], [0,1], Extrapolate.CLAMPt),
-        transform:[
+    const headerHideOnScrollAnimatedStyle = useAnimatedStyle(() => {
+      return {
+        opacity: interpolate(
+          scrollY.value,
+          [80, 0],
+          [0, 1],
+          Extrapolate.CLAMPt,
+        ),
+        transform: [
           {
-            translateY:interpolate(scrollY.value, inputRange, [0, 200], Extrapolate.CLAMP)
-          }
-        ]
-      }
-    })
+            translateY: interpolate(
+              scrollY.value,
+              inputRange,
+              [0, 200],
+              Extrapolate.CLAMP,
+            ),
+          },
+        ],
+      };
+    });
 
-    const headerShowOnScrollAnimatedStyle = useAnimatedStyle(()=>{
-       return{
-        opacity:interpolate(scrollY.value, [80, 0], [1, 0], Extrapolate.CLAMP),
-        transform:[
+    const headerShowOnScrollAnimatedStyle = useAnimatedStyle(() => {
+      return {
+        opacity: interpolate(scrollY.value, [80, 0], [1, 0], Extrapolate.CLAMP),
+        transform: [
           {
-            translateY: interpolate(scrollY.value, inputRange, [50, 130], Extrapolate.CLAMP)
-          }
-        ]
-       }
-    })
+            translateY: interpolate(
+              scrollY.value,
+              inputRange,
+              [50, 130],
+              Extrapolate.CLAMP,
+            ),
+          },
+        ],
+      };
+    });
     return (
       <Animated.View
-        style={[{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          height: 250,
-          overflow: 'hidden',
-        }, headerHeightAnimatedStyle]}>
-          
+        style={[
+          {
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: 250,
+            overflow: 'hidden',
+          },
+          headerHeightAnimatedStyle,
+        ]}>
         {/* background Image */}
         <SharedElement
           id={`${sharedElementPrefix}-CategoryCard-Bg-${category?.id}`}
@@ -128,30 +145,34 @@ const CourseListing = ({navigation, route}) => {
         {/* Title */}
 
         <Animated.View
-         style={[{
-          position:'absolute',
-          top: -80,
-          left: 0,
-          right: 0
-         },headerShowOnScrollAnimatedStyle]}
-        >
+          style={[
+            {
+              position: 'absolute',
+              top: -80,
+              left: 0,
+              right: 0,
+            },
+            headerShowOnScrollAnimatedStyle,
+          ]}>
           <Text
             style={{
               textAlign: 'center',
               color: COLORS.white,
-              ...FONTS.h2
-            }}
-          >
+              ...FONTS.h2,
+            }}>
             {category?.title}
           </Text>
-       </Animated.View>
+        </Animated.View>
 
         <Animated.View
-          style={[{
-            position: 'absolute',
-            bottom: 70,
-            left: 30,
-          },headerHideOnScrollAnimatedStyle]}>
+          style={[
+            {
+              position: 'absolute',
+              bottom: 70,
+              left: 30,
+            },
+            headerHideOnScrollAnimatedStyle,
+          ]}>
           <SharedElement
             id={`${sharedElementPrefix}-CategoryCard-Title-${category?.id}`}
             style={[StyleSheet.absoluteFillObject]}>
@@ -168,9 +189,7 @@ const CourseListing = ({navigation, route}) => {
 
         {/* Back  */}
 
-        <Animated.View 
-          style={headerFadeAnimatedStyle}
-        >
+        <Animated.View style={headerFadeAnimatedStyle}>
           <IconButton
             icon={icons.back}
             iconStyle={{
@@ -188,23 +207,26 @@ const CourseListing = ({navigation, route}) => {
               backgroundColor: COLORS.white,
             }}
             onPress={() => {
-
-              if (scrollY.value > 0 && scrollY.value <= 200){
+              if (scrollY.value > 0 && scrollY.value <= 200) {
                 FlatListRef.current?.scrollToOffset({
-                  offset:0,
-                  animated: true
-                })
+                  offset: 0,
+                  animated: true,
+                });
 
-                setTimeout(()=>{
-                  headerSharedValue.value=withTiming(80, {
-                    duration: 500
-                  },()=>{
-                    runOnJS(backHandler)();
-                  })
-              },100)
-            } else {
-              backHandler()
-            }  
+                setTimeout(() => {
+                  headerSharedValue.value = withTiming(
+                    80,
+                    {
+                      duration: 500,
+                    },
+                    () => {
+                      runOnJS(BackHandler);
+                    },
+                  );
+                }, 100);
+              } else {
+                BackHandler();
+              }
             }}
           />
         </Animated.View>
@@ -223,119 +245,105 @@ const CourseListing = ({navigation, route}) => {
             },
             headerFadeAnimatedStyle,
             headerTranslateAnimatedStyle,
-            headerHideOnScrollAnimatedStyle
+            headerHideOnScrollAnimatedStyle,
           ]}
         />
       </Animated.View>
     );
   }
 
-  function renderResults(){
-    return(
+  function RenderResults() {
+    return (
       <AnimatedFlatList
-           ref={FlatListRef}
-           data={dummyData.courses_list_2}
-           keyExtractor={item => `Results-${item.id}`}
-           contentContainerStyle={{
-            paddingHorizontal: SIZES.padding
-           }}
-           showsHorizontalScrollIndicator={false}
-           scrollEventThrottle={16}
-           keyboardDismissMode="on-drag"
-           onScroll={onScroll}
-           ListHeaderComponent={
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                marginTop: 270,
-                marginBottom:SIZES.base
-              }}  
-           >
-
+        ref={FlatListRef}
+        data={dummyData.courses_list_2}
+        keyExtractor={item => `Results-${item.id}`}
+        contentContainerStyle={{
+          paddingHorizontal: SIZES.padding,
+        }}
+        showsHorizontalScrollIndicator={false}
+        scrollEventThrottle={16}
+        keyboardDismissMode="on-drag"
+        onScroll={onScroll}
+        ListHeaderComponent={
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              marginTop: 270,
+              marginBottom: SIZES.base,
+            }}>
             {/* Results */}
             <Text
               style={{
-                flex:1,
-                ...FONTS.body3
-              }}
-            >
+                flex: 1,
+                ...FONTS.body3,
+              }}>
               5,761 Results
             </Text>
 
             {/* Filter Button */}
             <IconButton
-               icon={icons.filter}
-               iconStyle={{
+              icon={icons.filter}
+              iconStyle={{
                 width: 20,
-                height:20
-               }}
-               containerStyle={{
+                height: 20,
+              }}
+              containerStyle={{
                 width: 40,
                 height: 40,
                 alignItems: 'center',
-                justifyContent:'center',
+                justifyContent: 'center',
                 borderRadius: 10,
-                backgroundColor: COLORS.primary
-               }}
+                backgroundColor: COLORS.primary,
+              }}
+              onPress={() => {
+                FilterModalSharedValue1.value = withTiming(0, {
+                  duration: 100,
+                });
 
-               onPress={()=>{
-                FilterModalSharedValue1.value=withTiming(0,{
-                  duration: 100
-                })
-
-                FilterModalSharedValue2.value=withDelay(100,
+                FilterModalSharedValue2.value = withDelay(
+                  100,
                   withTiming(0, {
-                    duration: 500
-                  })
-                )
-               }}
-
-               renderItems={{item, index }=(
+                    duration: 500,
+                  }),
+                );
+              }}
+              renderItems={({item, index}) => (
                 <HorizontalCourseCard
-                   course={item}
-                   containerStyle={{
+                  course={item}
+                  containerStyle={{
                     marginVertical: SIZES.padding,
-                    marginTop: index == 0 ? SIZES.radius : SIZES.padding
-                   }}
+                    marginTop: index === 0 ? SIZES.radius : SIZES.padding,
+                  }}
                 />
               )}
-              ItemSeparatorComponent={()=>(
+              ItemSeparatorComponent={() => (
                 <LineDivider
                   lineStyle={{
-                    backgroundColor: COLORS.gray20
+                    backgroundColor: COLORS.gray20,
                   }}
                 />
               )}
             />
-
-            </View>
-           }
-
-           />
-          
-
-    
-    )
+          </View>
+        }
+      />
+    );
   }
 
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: COLORS.white,
-      }}>
-
-        {/* Results */}
-        {renderResults()}
+    <View style={{flex: 1, backgroundColor: COLORS.white}}>
+      {/* Results */}
+      <RenderResults />
 
       {/* Header */}
-      {renderHeader()}
+      <RenderHeader />
 
       {/* Filter Modal  */}
       <FilterModal
-       FilterModalSharedValue1={FilterModalSharedValue1}
-       FilterModalSharedValue2={FilterModalSharedValue2}
+        FilterModalSharedValue1={FilterModalSharedValue1}
+        FilterModalSharedValue2={FilterModalSharedValue2}
       />
     </View>
   );

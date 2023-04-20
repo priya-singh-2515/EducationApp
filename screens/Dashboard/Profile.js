@@ -7,8 +7,8 @@ import {
   ScrollView,
   StyleSheet,
 } from 'react-native';
-import { connect } from "react-redux";
-import { toggleTheme } from '../../stores/themeActions';
+import {connect} from 'react-redux';
+import {toggleTheme} from '../../stores/themeActions';
 
 import {
   IconButton,
@@ -21,24 +21,24 @@ import {
 import {COLORS, FONTS, SIZES, icons, images} from '../../constants';
 // import appTheme from '../../constants/theme';
 
-const Profile = ({appTheme, toggleTheme}) => {
-
-  const [newCourseNotification, setNewCourseNotification] = React.useState(false);
+const Profile = ({appTheme}) => {
+  const [newCourseNotification, setNewCourseNotification] =
+    React.useState(false);
   const [studyReminder, setStudyReminder] = React.useState(false);
 
-// Handler
+  // Handler
 
-function toggleThemeHandler(){
-  if (appTheme?.name == "light"){
-    toggleTheme("dark")
-  }else{
-    toggleTheme("light")
+  function toggleThemeHandler() {
+    if (appTheme?.name === 'light') {
+      toggleTheme('dark');
+    } else {
+      toggleTheme('light');
+    }
   }
-}
 
-// Render
+  // Render
 
- function renderHeader() {
+  function renderHeader() {
     return (
       <View
         style={{
@@ -60,9 +60,9 @@ function toggleThemeHandler(){
           icon={icons.sun}
           iconStyle={{
             // tintColor: COLORS.black,
-            tintColor: appTheme?. tintColor
+            tintColor: appTheme?.tintColor,
           }}
-          onPress={()=>toggleThemeHandler()}
+          onPress={() => toggleThemeHandler()}
         />
       </View>
     );
@@ -78,7 +78,7 @@ function toggleThemeHandler(){
           paddingVertical: 20,
           borderRadius: SIZES.radius,
           // backgroundColor: COLORS.primary3,
-          backgroundColor:appTheme?.backgroundColor2
+          backgroundColor: appTheme?.backgroundColor2,
         }}>
         {/* Profile Image */}
         <TouchableOpacity
@@ -180,7 +180,7 @@ function toggleThemeHandler(){
             </Text>
           </View>
 
-              {/* Member */}
+          {/* Member */}
           <TextButton
             label="+ Become Member"
             contentContainerStyle={{
@@ -189,11 +189,11 @@ function toggleThemeHandler(){
               paddingHorizontal: SIZES.radius,
               borderRadius: 20,
               // backgroundColor: COLORS.white,
-              backgroundColor: appTheme?.backgroundColor4
+              backgroundColor: appTheme?.backgroundColor4,
             }}
             labelStyle={{
               // color: COLORS.primary,
-              color: appTheme?.textColor2
+              color: appTheme?.textColor2,
             }}
           />
         </View>
@@ -271,9 +271,8 @@ function toggleThemeHandler(){
       style={{
         flex: 1,
         // backgroundColor: COLORS.white,
-        backgroundColor: appTheme?.backgroundColor1
+        backgroundColor: appTheme?.backgroundColor1,
       }}>
-
       {/* Header */}
       {renderHeader()}
 
@@ -305,17 +304,19 @@ const styles = StyleSheet.create({
   },
 });
 
-function mapStateToProps(state){
-  return{
-    appTheme: state.appTheme,
-    error: state.error
-  }
-}
-
-function mapDispatchToProps(dispatch){
+function mapStateToProps(state) {
   return {
-    toggleTheme: (themeType)=> { return dispatch(toggleTheme(themeType))}
-  }
+    appTheme: state.appTheme,
+    error: state.error,
+  };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (Profile);
+function mapDispatchToProps(dispatch) {
+  return {
+    toggleTheme: themeType => {
+      return dispatch(toggleTheme(themeType));
+    },
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

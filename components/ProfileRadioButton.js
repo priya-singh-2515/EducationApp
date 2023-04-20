@@ -1,9 +1,8 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity, Animated} from 'react-native';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 import {COLORS, FONTS, SIZES} from '../constants';
-import {color} from 'react-native-reanimated';
 
 const ProfileRadioButton = ({icon, label, isSelected, onPress, appTheme}) => {
   const radioAnimated = React.useRef(new Animated.Value(0)).current;
@@ -18,21 +17,21 @@ const ProfileRadioButton = ({icon, label, isSelected, onPress, appTheme}) => {
     outputRange: [COLORS.additionalColor4, COLORS.additionalColor13],
   });
 
-  React.useEffect(()=>{
-    if (isSelected){
-      Animated.timing(radioAnimated,{
+  React.useEffect(() => {
+    if (isSelected) {
+      Animated.timing(radioAnimated, {
         toValue: 17,
         duration: 300,
-        useNativeDriver: false
+        useNativeDriver: false,
       }).start();
-    }else{
-      Animated.timing(radioAnimated,{
-        toValue:0,
-        duration:300,
-        useNativeDriver: false
+    } else {
+      Animated.timing(radioAnimated, {
+        toValue: 0,
+        duration: 300,
+        useNativeDriver: false,
       }).start();
     }
-  },[isSelected])
+  }, [isSelected, radioAnimated]);
 
   return (
     <View
@@ -41,7 +40,6 @@ const ProfileRadioButton = ({icon, label, isSelected, onPress, appTheme}) => {
         height: 80,
         alignItems: 'center',
       }}>
-
       {/* Icon */}
       <View
         style={{
@@ -51,7 +49,7 @@ const ProfileRadioButton = ({icon, label, isSelected, onPress, appTheme}) => {
           justifyContent: 'center',
           borderRadius: 20,
           // backgroundColor: COLORS.additionalColor11,
-          backgroundColor: appTheme?.backgroundColor3
+          backgroundColor: appTheme?.backgroundColor3,
         }}>
         <Image
           source={icon}
@@ -113,7 +111,7 @@ const ProfileRadioButton = ({icon, label, isSelected, onPress, appTheme}) => {
             // borderColor: COLORS.primary3, //Animated
             borderColor: circleAnimated,
             // backgroundColor: COLORS.white,
-            backgroundColor: appTheme?.backgroundColor1
+            backgroundColor: appTheme?.backgroundColor1,
           }}
         />
       </TouchableOpacity>

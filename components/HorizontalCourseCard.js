@@ -67,7 +67,7 @@ const HorizontalCourseCard = ({containerStyle, course}) => {
           style={{
             ...FONTS.h3,
             fontSize: 18,
-            color:COLORS.black
+            color: COLORS.black,
           }}>
           {course.title}
         </Text>
@@ -83,7 +83,7 @@ const HorizontalCourseCard = ({containerStyle, course}) => {
           <Text
             style={{
               ...FONTS.body4,
-              color:COLORS.gray70
+              color: COLORS.gray70,
             }}>
             by {course.instructor}
           </Text>
@@ -102,43 +102,41 @@ const HorizontalCourseCard = ({containerStyle, course}) => {
               ...FONTS.body4,
             }}
           />
-
-          
         </View>
         {/* Price & Ratings */}
 
         <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            marginTop: SIZES.base,
+          }}>
+          <Text
             style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              marginTop: SIZES.base,
+              ...FONTS.h2,
+              color: COLORS.primary,
             }}>
-            <Text
-              style={{
-                ...FONTS.h2,
-                color: COLORS.primary,
-              }}>
-              ${course.price.toFixed(2)}
-            </Text>
+            ${course.price.toFixed(2)}
+          </Text>
 
-            <IconLabel
-              icon={icons.star}
-              label={course.ratings}
-              containerStyle={{
-                marginLeft: SIZES.base,
-              }}
-              iconStyle={{
-                width: 15,
-                height: 15,
-                tintColor: COLORS.primary2,
-              }}
-              labelStyle={{
-                marginLeft: 5,
-                color: COLORS.black,
-                ...FONTS.h3,
-              }}
-            />
-          </View>
+          <IconLabel
+            icon={icons.star}
+            label={course.ratings}
+            containerStyle={{
+              marginLeft: SIZES.base,
+            }}
+            iconStyle={{
+              width: 15,
+              height: 15,
+              tintColor: COLORS.primary2,
+            }}
+            labelStyle={{
+              marginLeft: 5,
+              color: COLORS.black,
+              ...FONTS.h3,
+            }}
+          />
+        </View>
       </View>
     </TouchableOpacity>
   );
