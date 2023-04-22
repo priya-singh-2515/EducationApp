@@ -1,8 +1,7 @@
 import React from 'react';
 import {Easing} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-// import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {createSharedElementStackNavigator} from 'react-native-shared-element';
+import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
 
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
@@ -11,7 +10,6 @@ import themeReducer from './stores/themeReducer';
 
 import {MainLayout, CourseListing} from './screens';
 
-// const Stack = createNativeStackNavigator();
 const Stack = createSharedElementStackNavigator();
 const options = {
   gestureEnabled: false,
