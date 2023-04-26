@@ -21,7 +21,7 @@ import {
 import {COLORS, FONTS, SIZES, icons, images} from '../../constants';
 // import appTheme from '../../constants/theme';
 
-const Profile = ({appTheme}) => {
+const Profile = ({appTheme, toggleTheme}) => {
   const [newCourseNotification, setNewCourseNotification] =
     React.useState(false);
   const [studyReminder, setStudyReminder] = React.useState(false);

@@ -29,7 +29,6 @@ const HEADER_HEIGHT = 250;
 
 const CourseListing = ({navigation, route}) => {
   const {category, sharedElementPrefix} = route.params;
-
   const FlatListRef = React.useRef();
   const scrollY = useSharedValue(0);
   const onScroll = useAnimatedScrollHandler(event => {
@@ -37,8 +36,8 @@ const CourseListing = ({navigation, route}) => {
   });
 
   const headerSharedValue = useSharedValue(80);
-  const FilterModalSharedValue1 = useSharedValue(SIZES.height);
-  const FilterModalSharedValue2 = useSharedValue(SIZES.height);
+  const filterModalSharedValue1 = useSharedValue(SIZES.height);
+  const filterModalSharedValue2 = useSharedValue(SIZES.height);
 
   // Handler
 
@@ -47,6 +46,7 @@ const CourseListing = ({navigation, route}) => {
   }
 
   // Render
+  // eslint-disable-next-line react/no-unstable-nested-components
   function RenderHeader() {
     const inputRange = [0, HEADER_HEIGHT - 50];
     headerSharedValue.value = withDelay(500, withTiming(0, {duration: 500}));
@@ -252,6 +252,7 @@ const CourseListing = ({navigation, route}) => {
     );
   }
 
+  // eslint-disable-next-line react/no-unstable-nested-components
   function RenderResults() {
     return (
       <AnimatedFlatList
@@ -276,6 +277,7 @@ const CourseListing = ({navigation, route}) => {
             {/* Results */}
             <Text
               style={{
+                color: COLORS.black,
                 flex: 1,
                 ...FONTS.body3,
               }}>
@@ -298,35 +300,35 @@ const CourseListing = ({navigation, route}) => {
                 backgroundColor: COLORS.primary,
               }}
               onPress={() => {
-                FilterModalSharedValue1.value = withTiming(0, {
+                filterModalSharedValue1.value = withTiming(0, {
                   duration: 100,
                 });
 
-                FilterModalSharedValue2.value = withDelay(
+                filterModalSharedValue2.value = withDelay(
                   100,
                   withTiming(0, {
                     duration: 500,
                   }),
                 );
               }}
-              renderItems={({item, index}) => (
-                <HorizontalCourseCard
-                  course={item}
-                  containerStyle={{
-                    marginVertical: SIZES.padding,
-                    marginTop: index === 0 ? SIZES.radius : SIZES.padding,
-                  }}
-                />
-              )}
-              ItemSeparatorComponent={() => (
-                <LineDivider
-                  lineStyle={{
-                    backgroundColor: COLORS.gray20,
-                  }}
-                />
-              )}
             />
           </View>
+        }
+        renderItem={({item, index}) => (
+          <HorizontalCourseCard
+            course={item}
+            containerStyle={{
+              marginVertical: SIZES.padding,
+              marginTop: index === 0 ? SIZES.radius : SIZES.padding,
+            }}
+          />
+        )}
+        ItemSeparatorComponent={
+          <LineDivider
+            lineStyle={{
+              backgroundColor: COLORS.gray20,
+            }}
+          />
         }
       />
     );
@@ -342,8 +344,8 @@ const CourseListing = ({navigation, route}) => {
 
       {/* Filter Modal  */}
       <FilterModal
-        FilterModalSharedValue1={FilterModalSharedValue1}
-        FilterModalSharedValue2={FilterModalSharedValue2}
+        filterModalSharedValue1={filterModalSharedValue1}
+        filterModalSharedValue2={filterModalSharedValue2}
       />
     </View>
   );

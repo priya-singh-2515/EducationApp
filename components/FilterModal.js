@@ -68,6 +68,7 @@ const ClassLevelOption = ({
           style={{
             flex: 1,
             ...FONTS.body3,
+            color: COLORS.black,
           }}>
           {classLevel.label}
         </Text>
@@ -87,7 +88,8 @@ const ClassLevelOption = ({
   );
 };
 
-const FilterModal = ({FilterModalSharedValue1, FilterModalSharedValue2}) => {
+const FilterModal = ({filterModalSharedValue1, filterModalSharedValue2}) => {
+  console.log({filterModalSharedValue1});
   const [selectedClassType, setSelectedClassType] = React.useState('');
   const [selectedClassLevel, setSelectedClassLevel] = React.useState('');
   const [selectedCreatedWithin, setSelectedCreatedWithin] = React.useState('');
@@ -95,20 +97,22 @@ const FilterModal = ({FilterModalSharedValue1, FilterModalSharedValue2}) => {
   const filterModalContainerAnimatedStyle = useAnimatedStyle(() => {
     return {
       opacity: interpolate(
-        FilterModalSharedValue1.value,
+        filterModalSharedValue1.value,
         [SIZES.height, 0],
         [0, 1],
       ),
-      transform: {
-        translateY: FilterModalSharedValue1.value,
-      },
+      transform: [
+        {
+          translateY: filterModalSharedValue1.value,
+        },
+      ],
     };
   });
 
   const filterModalBgAnimatedStyle = useAnimatedStyle(() => {
     return {
       opacity: interpolate(
-        FilterModalSharedValue2.value,
+        filterModalSharedValue2.value,
         [SIZES.height, 0],
         [0, 1],
       ),
@@ -118,13 +122,13 @@ const FilterModal = ({FilterModalSharedValue1, FilterModalSharedValue2}) => {
   const filterModalContentAnimatedStyle = useAnimatedStyle(() => {
     return {
       opacity: interpolate(
-        FilterModalSharedValue2.value,
+        filterModalSharedValue2.value,
         [SIZES.height, 0],
         [0, 1],
       ),
       transform: [
         {
-          translateY: FilterModalSharedValue2.value,
+          translateY: filterModalSharedValue2.value,
         },
       ],
     };
@@ -230,12 +234,13 @@ const FilterModal = ({FilterModalSharedValue1, FilterModalSharedValue2}) => {
                 flex: 1,
                 textAlign: 'center',
                 ...FONTS.h1,
+                color: COLORS.black,
               }}>
               Filter
             </Text>
 
             <TextButton
-              label="cancel"
+              label="Cancel"
               contentContainerStyle={{
                 width: 60,
                 backgroundColor: null,
@@ -245,10 +250,10 @@ const FilterModal = ({FilterModalSharedValue1, FilterModalSharedValue2}) => {
                 ...FONTS.body3,
               }}
               onPress={() => {
-                FilterModalSharedValue2.value = withTiming(SIZES.height, {
+                filterModalSharedValue2.value = withTiming(SIZES.height, {
                   duration: 500,
                 });
-                FilterModalSharedValue1.value = withDelay(
+                filterModalSharedValue1.value = withDelay(
                   500,
                   withTiming(SIZES.height, {duration: 100}),
                 );
@@ -270,6 +275,7 @@ const FilterModal = ({FilterModalSharedValue1, FilterModalSharedValue2}) => {
               <Text
                 style={{
                   ...FONTS.h3,
+                  color: COLORS.black,
                 }}>
                 Class Type
               </Text>
@@ -306,6 +312,7 @@ const FilterModal = ({FilterModalSharedValue1, FilterModalSharedValue2}) => {
               <Text
                 style={{
                   ...FONTS.h3,
+                  color: COLORS.black,
                 }}>
                 Class Level
               </Text>
@@ -335,6 +342,7 @@ const FilterModal = ({FilterModalSharedValue1, FilterModalSharedValue2}) => {
               <Text
                 style={{
                   ...FONTS.h3,
+                  color: COLORS.black,
                 }}>
                 Created Within
               </Text>
@@ -384,6 +392,7 @@ const FilterModal = ({FilterModalSharedValue1, FilterModalSharedValue2}) => {
                   <Text
                     style={{
                       ...FONTS.h3,
+                      color: COLORS.black,
                     }}>
                     Created Within
                   </Text>
