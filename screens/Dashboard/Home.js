@@ -48,7 +48,7 @@ const Home = () => {
       <View
         style={{
           flexDirection: 'row',
-          marginTop: 40,
+          marginTop: 10,
           marginBottom: 10,
           paddingHorizontal: SIZES.padding,
           alignItems: 'center',

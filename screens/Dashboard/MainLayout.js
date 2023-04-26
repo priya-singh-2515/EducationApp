@@ -6,8 +6,8 @@ import {connect} from 'react-redux';
 import {Home, Profile, Search} from '../../screens';
 import {COLORS, SIZES, FONTS, constants} from '../../constants';
 
-const bottom_tabs = constants.bottom_tabs.map(bottom_tab => ({
-  ...bottom_tab,
+const bottom_tabs = constants.bottom_tabs.map(bottom_tabs => ({
+  ...bottom_tabs,
   ref: React.createRef(),
 }));
 
@@ -67,7 +67,8 @@ const Tabs = ({scrollX, onBottomTabPress}) => {
         },
       );
     });
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [containerRef?.current]);
 
   return (
     <View ref={containerRef} style={{flex: 1, flexDirection: 'row'}}>
@@ -80,7 +81,7 @@ const Tabs = ({scrollX, onBottomTabPress}) => {
       {bottom_tabs.map((item, index) => {
         return (
           <TouchableOpacity
-            Key={`BottomTab-${index}`}
+            key={`BottomTab-${index}`}
             ref={item.ref}
             style={{
               flex: 1,

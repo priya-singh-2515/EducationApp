@@ -43,7 +43,7 @@ const Profile = ({appTheme, toggleTheme}) => {
       <View
         style={{
           flexDirection: 'row',
-          marginTop: 50,
+          marginTop: 10,
           paddingHorizontal: SIZES.padding,
           justifyContent: 'space-between',
         }}>
@@ -239,7 +239,7 @@ const Profile = ({appTheme, toggleTheme}) => {
   function renderProfileSection2() {
     return (
       <View style={styles.profileSectionContainer}>
-        <ProfileValue icon={icons.star_1} value="Pages" />
+        <ProfileValue icon={icons.star_1} label="Pages" value="Course" />
 
         <LineDivider />
 

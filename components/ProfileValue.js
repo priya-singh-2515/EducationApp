@@ -17,11 +17,11 @@ const ProfileValue = ({icon, label, value, onPress, appTheme}) => {
       {/* Icon */}
       <View
         style={{
-          // flexDirection: 'row',
+          flexDirection: 'row',
           width: 40,
           height: 40,
           alignItems: 'center',
-          // justifyContent: 'space-between',
+          justifyContent: 'center',
           borderRadius: 20,
           //   backgroundColor: COLORS.black,
           backgroundColor: appTheme?.backgroundColor3,

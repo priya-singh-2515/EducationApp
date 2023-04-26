@@ -89,7 +89,6 @@ const ClassLevelOption = ({
 };
 
 const FilterModal = ({filterModalSharedValue1, filterModalSharedValue2}) => {
-  console.log({filterModalSharedValue1});
   const [selectedClassType, setSelectedClassType] = React.useState('');
   const [selectedClassLevel, setSelectedClassLevel] = React.useState('');
   const [selectedCreatedWithin, setSelectedCreatedWithin] = React.useState('');

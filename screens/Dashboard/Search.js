@@ -121,6 +121,7 @@ const Search = () => {
     );
   }
 
+  // eslint-disable-next-line react/no-unstable-nested-components
   function RenderSearchBar() {
     const inputRange = [0, 50];
 
@@ -158,15 +159,14 @@ const Search = () => {
               width: SIZES.width - SIZES.padding * 2,
               paddingHorizontal: SIZES.radius,
               borderRadius: SIZES.radius,
-              backgroundColor: COLORS.primary2,
+              backgroundColor: COLORS.gray20,
             }}>
             <Image
               source={icons.search}
               style={{
                 width: 25,
                 height: 25,
-                lintColor: COLORS.black,
-                // backgroundColor:COLORS.black
+                // lintColor: COLORS.black,
               }}
             />
 
