@@ -10,13 +10,14 @@ import {
 import {IconLabel} from '../components';
 import {SIZES, FONTS, COLORS, icons} from '../constants';
 
-const HorizontalCourseCard = ({containerStyle, course}) => {
+const HorizontalCourseCard = ({containerStyle, course, onPress}) => {
   return (
     <TouchableOpacity
       style={{
         flexDirection: 'row',
         ...containerStyle,
-      }}>
+      }}
+      onPress={onPress}>
       {/* thumbnail */}
       <ImageBackground
         source={course.thumbnail}

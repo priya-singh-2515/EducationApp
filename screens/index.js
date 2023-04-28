@@ -7,4 +7,6 @@ import Search from './Dashboard/Search';
 // Course
 import CourseListing from './Course/CourseListing';
 
-export {MainLayout, Home, Profile, Search, CourseListing};
+import CourseView from './Course/CourseView';
+
+export {MainLayout, Home, Profile, Search, CourseListing, CourseView};
