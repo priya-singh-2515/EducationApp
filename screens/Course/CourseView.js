@@ -20,6 +20,7 @@ import {
 } from '../../constants';
 
 import CourseChapters from './CourseTabs/CourseChapters';
+import CourseFiles from './CourseTabs/CourseFiles';
 
 // import {measure} from 'react-native-reanimated';
 
@@ -344,7 +345,7 @@ const CourseView = ({navigation, route}) => {
                   width: SIZES.width,
                 }}>
                 {index === 0 && <CourseChapters />}
-                {index === 1 && <Text>Files</Text>}
+                {index === 1 && <CourseFiles />}
                 {index === 2 && <Text>Discussions</Text>}
               </View>
             );
