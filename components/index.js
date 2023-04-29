@@ -10,6 +10,7 @@ import ProfileValue from './ProfileValue';
 import ProfileRadioButton from './ProfileRadioButton';
 import FilterModal from './FilterModal';
 import TwoPointSlider from './TwoPointSlider';
+import IconLabelButton from './IconLabelButton';
 export {
   IconButton,
   TextButton,
@@ -23,4 +24,5 @@ export {
   ProfileRadioButton,
   FilterModal,
   TwoPointSlider,
+  IconLabelButton,
 };

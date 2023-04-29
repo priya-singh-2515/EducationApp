@@ -21,6 +21,7 @@ import {
 
 import CourseChapters from './CourseTabs/CourseChapters';
 import CourseFiles from './CourseTabs/CourseFiles';
+import CourseDiscussions from './CourseTabs/CourseDiscussions';
 
 // import {measure} from 'react-native-reanimated';
 
@@ -111,6 +112,7 @@ const Tabs = ({scrollX, onTabPress}) => {
               justifyContent: 'center',
             }}
             onPress={() => {
+              Keyboard.dismiss()
               onTabPress(index);
             }}>
             <Text
@@ -346,7 +348,7 @@ const CourseView = ({navigation, route}) => {
                 }}>
                 {index === 0 && <CourseChapters />}
                 {index === 1 && <CourseFiles />}
-                {index === 2 && <Text>Discussions</Text>}
+                {index === 2 && <CourseDiscussions />}
               </View>
             );
           }}
