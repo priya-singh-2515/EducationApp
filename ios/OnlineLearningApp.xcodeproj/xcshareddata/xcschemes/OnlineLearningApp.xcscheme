@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "OnlineLearningApp.app"
-               BlueprintName = "OnlineLearningApp"
-               ReferencedContainer = "container:OnlineLearningApp.xcodeproj">
+               BuildableName = "EduLearn.app"
+               BlueprintName = "EduLearn"
+               ReferencedContainer = "container:EduLearn.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "OnlineLearningAppTests.xctest"
-               BlueprintName = "OnlineLearningAppTests"
-               ReferencedContainer = "container:OnlineLearningApp.xcodeproj">
+               BuildableName = "EduLearnTests.xctest"
+               BlueprintName = "EduLearnTests"
+               ReferencedContainer = "container:EduLearn.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "OnlineLearningApp.app"
-            BlueprintName = "OnlineLearningApp"
-            ReferencedContainer = "container:OnlineLearningApp.xcodeproj">
+            BuildableName = "EduLearn.app"
+            BlueprintName = "EduLearn"
+            ReferencedContainer = "container:EduLearn.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "OnlineLearningApp.app"
-            BlueprintName = "OnlineLearningApp"
-            ReferencedContainer = "container:OnlineLearningApp.xcodeproj">
+            BuildableName = "EduLearn.app"
+            BlueprintName = "EduLearn"
+            ReferencedContainer = "container:EduLearn.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

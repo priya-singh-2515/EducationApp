@@ -1,4 +1,4 @@
-package com.onlinelearningapp;
+package com.edulearn;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

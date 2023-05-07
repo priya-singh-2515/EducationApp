@@ -93,9 +93,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.onlinelearningapp"
+    namespace "com.edulearn"
     defaultConfig {
-        applicationId "com.onlinelearningapp"
+        applicationId "com.edulearn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

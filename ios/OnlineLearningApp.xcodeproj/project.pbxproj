@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* OnlineLearningAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* OnlineLearningAppTests.m */; };
+		00E356F31AD99517003FC87E /* EduLearnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* EduLearnTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -18,14 +18,14 @@
 		4E6EC50413A741C8A250B2D0 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0114A661BCF141A0A1174BCE /* Roboto-Light.ttf */; };
 		562F108F697D4CE6A29DA702 /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA5E4F6C108489895776D2B /* RobotoCondensed-Italic.ttf */; };
 		672386FFC75F4B3FB5248D4B /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00275B13B4184ECC98AF0038 /* RobotoCondensed-LightItalic.ttf */; };
-		6909BDC01BEA1D4D3782F602 /* libPods-OnlineLearningApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D535DC7BAB08967C4EF6D9B1 /* libPods-OnlineLearningApp.a */; };
+		6909BDC01BEA1D4D3782F602 /* libPods-EduLearn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D535DC7BAB08967C4EF6D9B1 /* libPods-EduLearn.a */; };
 		74C0BCB37EFC44AB9FA28671 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA4B3AF4CC874B7A95CDE586 /* Roboto-Medium.ttf */; };
 		80EC21C5BD564FA7895A9D6B /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71F6D021729A4CE4B754C9A2 /* Roboto-Thin.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		863AF4E38C354DD49C16401D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73C689489E964123AC139373 /* Roboto-Regular.ttf */; };
 		A242892F180F4C4390955603 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0425FBF3B59D4D16A22DFA67 /* RobotoCondensed-Regular.ttf */; };
 		A49A84131B734931AC6F6227 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C8D1CB7018B42109298B42F /* Roboto-MediumItalic.ttf */; };
-		AA1447D940A0183C337067D0 /* libPods-OnlineLearningApp-OnlineLearningAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7063B7EECF2F730D416165 /* libPods-OnlineLearningApp-OnlineLearningAppTests.a */; };
+		AA1447D940A0183C337067D0 /* libPods-EduLearn-EduLearnTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7063B7EECF2F730D416165 /* libPods-EduLearn-EduLearnTests.a */; };
 		AF3E4B38C80144728744893B /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 448EB25DF71A4D67B4D9B415 /* Roboto-Black.ttf */; };
 		B08B1F1EDCED480FB29ECB04 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B20A5A49C9DF4074B0039EA5 /* Roboto-BoldItalic.ttf */; };
 		BF7605769D104F968C103B63 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBA63373112E43D2A8B87BC5 /* RobotoCondensed-Light.ttf */; };
@@ -40,46 +40,46 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = OnlineLearningApp;
+			remoteInfo = EduLearn;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		00275B13B4184ECC98AF0038 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoCondensed-LightItalic.ttf"; path = "../assets/fonts/RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* OnlineLearningAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnlineLearningAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* EduLearnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EduLearnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* OnlineLearningAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnlineLearningAppTests.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* EduLearnTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EduLearnTests.m; sourceTree = "<group>"; };
 		0114A661BCF141A0A1174BCE /* Roboto-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Light.ttf"; path = "../assets/fonts/Roboto-Light.ttf"; sourceTree = "<group>"; };
 		0425FBF3B59D4D16A22DFA67 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoCondensed-Regular.ttf"; path = "../assets/fonts/RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
-		083D119A768F2E00B2C05F78 /* Pods-OnlineLearningApp-OnlineLearningAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineLearningApp-OnlineLearningAppTests.debug.xcconfig"; path = "Target Support Files/Pods-OnlineLearningApp-OnlineLearningAppTests/Pods-OnlineLearningApp-OnlineLearningAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		083D119A768F2E00B2C05F78 /* Pods-EduLearn-EduLearnTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduLearn-EduLearnTests.debug.xcconfig"; path = "Target Support Files/Pods-EduLearn-EduLearnTests/Pods-EduLearn-EduLearnTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0C8D1CB7018B42109298B42F /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-MediumItalic.ttf"; path = "../assets/fonts/Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
 		1369CE1DB66341BB892862FB /* Roboto-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Italic.ttf"; path = "../assets/fonts/Roboto-Italic.ttf"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* OnlineLearningApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineLearningApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = OnlineLearningApp/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = OnlineLearningApp/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = OnlineLearningApp/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = OnlineLearningApp/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = OnlineLearningApp/main.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* EduLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EduLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = EduLearn/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = EduLearn/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = EduLearn/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = EduLearn/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = EduLearn/main.m; sourceTree = "<group>"; };
 		23824B1324D844969EA00ED1 /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoCondensed-Bold.ttf"; path = "../assets/fonts/RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
 		2F42583C2FBF4DC9BEC40893 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Bold.ttf"; path = "../assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		4269E48D38402DD6D67595F6 /* Pods-OnlineLearningApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineLearningApp.debug.xcconfig"; path = "Target Support Files/Pods-OnlineLearningApp/Pods-OnlineLearningApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4269E48D38402DD6D67595F6 /* Pods-EduLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduLearn.debug.xcconfig"; path = "Target Support Files/Pods-EduLearn/Pods-EduLearn.debug.xcconfig"; sourceTree = "<group>"; };
 		448EB25DF71A4D67B4D9B415 /* Roboto-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Black.ttf"; path = "../assets/fonts/Roboto-Black.ttf"; sourceTree = "<group>"; };
 		4FA5E4F6C108489895776D2B /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoCondensed-Italic.ttf"; path = "../assets/fonts/RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
 		5434601D4968462AAD9F84EF /* RobotoCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoCondensed-BoldItalic.ttf"; path = "../assets/fonts/RobotoCondensed-BoldItalic.ttf"; sourceTree = "<group>"; };
 		54EE27BB09184CACB7707AFB /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-ThinItalic.ttf"; path = "../assets/fonts/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
-		5B42060EFED6B4FDB0879979 /* Pods-OnlineLearningApp-OnlineLearningAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineLearningApp-OnlineLearningAppTests.release.xcconfig"; path = "Target Support Files/Pods-OnlineLearningApp-OnlineLearningAppTests/Pods-OnlineLearningApp-OnlineLearningAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		5B42060EFED6B4FDB0879979 /* Pods-EduLearn-EduLearnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduLearn-EduLearnTests.release.xcconfig"; path = "Target Support Files/Pods-EduLearn-EduLearnTests/Pods-EduLearn-EduLearnTests.release.xcconfig"; sourceTree = "<group>"; };
 		71F6D021729A4CE4B754C9A2 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Thin.ttf"; path = "../assets/fonts/Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		73C689489E964123AC139373 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		742697B066C7470B95411866 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-LightItalic.ttf"; path = "../assets/fonts/Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = OnlineLearningApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = EduLearn/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85F7CCE70AE442B98500EB77 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-BlackItalic.ttf"; path = "../assets/fonts/Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
-		AC7063B7EECF2F730D416165 /* libPods-OnlineLearningApp-OnlineLearningAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OnlineLearningApp-OnlineLearningAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC7063B7EECF2F730D416165 /* libPods-EduLearn-EduLearnTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EduLearn-EduLearnTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20A5A49C9DF4074B0039EA5 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-BoldItalic.ttf"; path = "../assets/fonts/Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
 		CA4B3AF4CC874B7A95CDE586 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Medium.ttf"; path = "../assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		CBA63373112E43D2A8B87BC5 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoCondensed-Light.ttf"; path = "../assets/fonts/RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
-		D535DC7BAB08967C4EF6D9B1 /* libPods-OnlineLearningApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OnlineLearningApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D535DC7BAB08967C4EF6D9B1 /* libPods-EduLearn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EduLearn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FF57E5791648138699B4F441 /* Pods-OnlineLearningApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineLearningApp.release.xcconfig"; path = "Target Support Files/Pods-OnlineLearningApp/Pods-OnlineLearningApp.release.xcconfig"; sourceTree = "<group>"; };
+		FF57E5791648138699B4F441 /* Pods-EduLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduLearn.release.xcconfig"; path = "Target Support Files/Pods-EduLearn/Pods-EduLearn.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA1447D940A0183C337067D0 /* libPods-OnlineLearningApp-OnlineLearningAppTests.a in Frameworks */,
+				AA1447D940A0183C337067D0 /* libPods-EduLearn-EduLearnTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,20 +95,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6909BDC01BEA1D4D3782F602 /* libPods-OnlineLearningApp.a in Frameworks */,
+				6909BDC01BEA1D4D3782F602 /* libPods-EduLearn.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* OnlineLearningAppTests */ = {
+		00E356EF1AD99517003FC87E /* EduLearnTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* OnlineLearningAppTests.m */,
+				00E356F21AD99517003FC87E /* EduLearnTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = OnlineLearningAppTests;
+			path = EduLearnTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -119,7 +119,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* OnlineLearningApp */ = {
+		13B07FAE1A68108700A75B9A /* EduLearn */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -129,15 +129,15 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = OnlineLearningApp;
+			name = EduLearn;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				D535DC7BAB08967C4EF6D9B1 /* libPods-OnlineLearningApp.a */,
-				AC7063B7EECF2F730D416165 /* libPods-OnlineLearningApp-OnlineLearningAppTests.a */,
+				D535DC7BAB08967C4EF6D9B1 /* libPods-EduLearn.a */,
+				AC7063B7EECF2F730D416165 /* libPods-EduLearn-EduLearnTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,9 +152,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* OnlineLearningApp */,
+				13B07FAE1A68108700A75B9A /* EduLearn */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* OnlineLearningAppTests */,
+				00E356EF1AD99517003FC87E /* EduLearnTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				AF2023820AA7C9262FC666DE /* Pods */,
@@ -168,8 +168,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* OnlineLearningApp.app */,
-				00E356EE1AD99517003FC87E /* OnlineLearningAppTests.xctest */,
+				13B07F961A680F5B00A75B9A /* EduLearn.app */,
+				00E356EE1AD99517003FC87E /* EduLearnTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -203,10 +203,10 @@
 		AF2023820AA7C9262FC666DE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4269E48D38402DD6D67595F6 /* Pods-OnlineLearningApp.debug.xcconfig */,
-				FF57E5791648138699B4F441 /* Pods-OnlineLearningApp.release.xcconfig */,
-				083D119A768F2E00B2C05F78 /* Pods-OnlineLearningApp-OnlineLearningAppTests.debug.xcconfig */,
-				5B42060EFED6B4FDB0879979 /* Pods-OnlineLearningApp-OnlineLearningAppTests.release.xcconfig */,
+				4269E48D38402DD6D67595F6 /* Pods-EduLearn.debug.xcconfig */,
+				FF57E5791648138699B4F441 /* Pods-EduLearn.release.xcconfig */,
+				083D119A768F2E00B2C05F78 /* Pods-EduLearn-EduLearnTests.debug.xcconfig */,
+				5B42060EFED6B4FDB0879979 /* Pods-EduLearn-EduLearnTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
@@ -215,9 +215,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* OnlineLearningAppTests */ = {
+		00E356ED1AD99517003FC87E /* EduLearnTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "OnlineLearningAppTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "EduLearnTests" */;
 			buildPhases = (
 				9FCD43420F07B5B1A2C4FCC9 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -231,14 +231,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = OnlineLearningAppTests;
-			productName = OnlineLearningAppTests;
-			productReference = 00E356EE1AD99517003FC87E /* OnlineLearningAppTests.xctest */;
+			name = EduLearnTests;
+			productName = EduLearnTests;
+			productReference = 00E356EE1AD99517003FC87E /* EduLearnTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* OnlineLearningApp */ = {
+		13B07F861A680F5B00A75B9A /* EduLearn */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "OnlineLearningApp" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "EduLearn" */;
 			buildPhases = (
 				71C6EB1833BB3B12DFCE0CE7 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -253,9 +253,9 @@
 			);
 			dependencies = (
 			);
-			name = OnlineLearningApp;
-			productName = OnlineLearningApp;
-			productReference = 13B07F961A680F5B00A75B9A /* OnlineLearningApp.app */;
+			name = EduLearn;
+			productName = EduLearn;
+			productReference = 13B07F961A680F5B00A75B9A /* EduLearn.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -275,7 +275,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "OnlineLearningApp" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "EduLearn" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -288,8 +288,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* OnlineLearningApp */,
-				00E356ED1AD99517003FC87E /* OnlineLearningAppTests */,
+				13B07F861A680F5B00A75B9A /* EduLearn */,
+				00E356ED1AD99517003FC87E /* EduLearnTests */,
 			);
 		};
 /* End PBXProject section */
@@ -352,15 +352,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OnlineLearningApp/Pods-OnlineLearningApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EduLearn/Pods-EduLearn-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OnlineLearningApp/Pods-OnlineLearningApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EduLearn/Pods-EduLearn-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OnlineLearningApp/Pods-OnlineLearningApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EduLearn/Pods-EduLearn-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2DD635E71876040C5C367A22 /* [CP] Copy Pods Resources */ = {
@@ -369,15 +369,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OnlineLearningApp/Pods-OnlineLearningApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EduLearn/Pods-EduLearn-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OnlineLearningApp/Pods-OnlineLearningApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EduLearn/Pods-EduLearn-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OnlineLearningApp/Pods-OnlineLearningApp-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EduLearn/Pods-EduLearn-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		71C6EB1833BB3B12DFCE0CE7 /* [CP] Check Pods Manifest.lock */ = {
@@ -395,7 +395,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OnlineLearningApp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-EduLearn-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -417,7 +417,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OnlineLearningApp-OnlineLearningAppTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-EduLearn-EduLearnTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -430,15 +430,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OnlineLearningApp-OnlineLearningAppTests/Pods-OnlineLearningApp-OnlineLearningAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EduLearn-EduLearnTests/Pods-EduLearn-EduLearnTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OnlineLearningApp-OnlineLearningAppTests/Pods-OnlineLearningApp-OnlineLearningAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EduLearn-EduLearnTests/Pods-EduLearn-EduLearnTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OnlineLearningApp-OnlineLearningAppTests/Pods-OnlineLearningApp-OnlineLearningAppTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EduLearn-EduLearnTests/Pods-EduLearn-EduLearnTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FA7BAA4B112F192F76446951 /* [CP] Copy Pods Resources */ = {
@@ -447,15 +447,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OnlineLearningApp-OnlineLearningAppTests/Pods-OnlineLearningApp-OnlineLearningAppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EduLearn-EduLearnTests/Pods-EduLearn-EduLearnTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OnlineLearningApp-OnlineLearningAppTests/Pods-OnlineLearningApp-OnlineLearningAppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EduLearn-EduLearnTests/Pods-EduLearn-EduLearnTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OnlineLearningApp-OnlineLearningAppTests/Pods-OnlineLearningApp-OnlineLearningAppTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EduLearn-EduLearnTests/Pods-EduLearn-EduLearnTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -484,7 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* OnlineLearningAppTests.m in Sources */,
+				00E356F31AD99517003FC87E /* EduLearnTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,7 +502,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* OnlineLearningApp */;
+			target = 13B07F861A680F5B00A75B9A /* EduLearn */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -510,14 +510,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 083D119A768F2E00B2C05F78 /* Pods-OnlineLearningApp-OnlineLearningAppTests.debug.xcconfig */;
+			baseConfigurationReference = 083D119A768F2E00B2C05F78 /* Pods-EduLearn-EduLearnTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = OnlineLearningAppTests/Info.plist;
+				INFOPLIST_FILE = EduLearnTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -531,17 +531,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnlineLearningApp.app/OnlineLearningApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EduLearn.app/EduLearn";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B42060EFED6B4FDB0879979 /* Pods-OnlineLearningApp-OnlineLearningAppTests.release.xcconfig */;
+			baseConfigurationReference = 5B42060EFED6B4FDB0879979 /* Pods-EduLearn-EduLearnTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = OnlineLearningAppTests/Info.plist;
+				INFOPLIST_FILE = EduLearnTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -555,19 +555,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnlineLearningApp.app/OnlineLearningApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EduLearn.app/EduLearn";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4269E48D38402DD6D67595F6 /* Pods-OnlineLearningApp.debug.xcconfig */;
+			baseConfigurationReference = 4269E48D38402DD6D67595F6 /* Pods-EduLearn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = OnlineLearningApp/Info.plist;
+				INFOPLIST_FILE = EduLearn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -578,7 +578,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = OnlineLearningApp;
+				PRODUCT_NAME = EduLearn;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -587,12 +587,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF57E5791648138699B4F441 /* Pods-OnlineLearningApp.release.xcconfig */;
+			baseConfigurationReference = FF57E5791648138699B4F441 /* Pods-EduLearn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = OnlineLearningApp/Info.plist;
+				INFOPLIST_FILE = EduLearn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -603,7 +603,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = OnlineLearningApp;
+				PRODUCT_NAME = EduLearn;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -737,7 +737,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "OnlineLearningAppTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "EduLearnTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -746,7 +746,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "OnlineLearningApp" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "EduLearn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -755,7 +755,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "OnlineLearningApp" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "EduLearn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

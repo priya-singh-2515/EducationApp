@@ -48,7 +48,6 @@ const CommentSection = ({commentItem, commentOption, replies}) => {
 };
 
 const CourseDiscussions = () => {
-
   const [footerPosition, setFooterPosition] = React.useState(0);
   const [footerHeight, setFooterHeight] = React.useState(60);
 
@@ -150,7 +149,6 @@ const CourseDiscussions = () => {
                     <CommentSection
                       commentItem={item}
                       commentOption={
-                        // eslint-disable-next-line react/self-closing-comp
                         <View
                           style={{
                             flexDirection: 'row',
@@ -232,32 +230,31 @@ const CourseDiscussions = () => {
           multiline
           placeholder="Type Something"
           placeholderTextColor={COLORS.gray80}
-          onContentSizeChange={(event)=>{
-            const height = event.nativeEvent.contentSize.height
-            
-            if(height <= 60) {
-              setFooterHeight(60)
-            }else if (height > 60 && height <= 100){
-              setFooterHeight(height)
-            }else if (height > 100){
-              setFooterHeight(100)
+          onContentSizeChange={event => {
+            const height = event.nativeEvent.contentSize.height;
+
+            if (height <= 60) {
+              setFooterHeight(60);
+            } else if (height > 60 && height <= 100) {
+              setFooterHeight(height);
+            } else if (height > 100) {
+              setFooterHeight(100);
             }
           }}
         />
         <View
-         style={{
-          alignItems: 'center',
-          justifyContent: 'center'
-         }}
-        >
-        <IconButton
-          icon={icons.send}
-          iconStyle={{
-            height: 25,
-            width: 25,
-            tintColor: COLORS.primary,
-          }}
-        />
+          style={{
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <IconButton
+            icon={icons.send}
+            iconStyle={{
+              height: 25,
+              width: 25,
+              tintColor: COLORS.primary,
+            }}
+          />
         </View>
       </View>
     );
