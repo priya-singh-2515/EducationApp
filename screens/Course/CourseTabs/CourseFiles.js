@@ -6,6 +6,7 @@ import {IconButton, TextButton} from '../../../components';
 
 const CourseFiles = () => {
   function renderStudents() {
+    let students;
     if (dummyData?.course_details?.students.length > 3) {
       students = dummyData?.course_details?.students.slice(0, 3);
     } else {

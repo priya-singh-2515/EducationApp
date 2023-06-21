@@ -17,6 +17,10 @@ export const COLORS = {
   gray85: '#242526',
   gray90: '#191919',
 
+  // black: '#0000000',
+  // lightText: '#00000090',
+  // white: '#ffffff',
+
   additionalColor4: '#C3C3C3',
   additionalColor9: '#F3F3F3',
   additionalColor11: '#F0FFFB',

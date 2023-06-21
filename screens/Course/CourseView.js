@@ -87,7 +87,7 @@ const Tabs = ({scrollX, onTabPress}) => {
         },
       );
     });
-  }, [containerRef.current]);
+  }, []);
   return (
     <View
       ref={containerRef}
@@ -142,7 +142,7 @@ const CourseView = ({navigation, route}) => {
     flatListRef?.current?.scrollToOffset({
       offset: tabIndex * SIZES.width,
     });
-  });
+  }, []);
 
   function renderHeaderComponents() {
     return (

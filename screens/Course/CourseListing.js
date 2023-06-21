@@ -11,7 +11,6 @@ import Animated, {
   withDelay,
   withTiming,
   runOnJS,
-  // event,
 } from 'react-native-reanimated';
 
 import {

@@ -1,24 +1,20 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  TextInput,
-} from 'react-native';
+import {View, Text, TouchableOpacity, ScrollView} from 'react-native';
 import React, {useState} from 'react';
 import {COLORS} from '../constants';
-import LoginWithIcon from '../components/LoginWithIcon';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import {TextInput} from 'react-native-gesture-handler';
 import {ImageBackground} from 'react-native';
+import LoginWithIcon from '../components/LoginWithIcon';
 
-const SignUpScreen = ({navigation}) => {
+const SignInScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [hidePassword, setHidePassword] = useState(true);
 
   const [showError, setShowError] = useState(false);
   const [errors, setErrors] = useState({});
 
-  const getErrors = (email, password, confirmPassword) => {
+  const getErrors = (email, password) => {
     const errors = {};
     if (!email) {
       errors.email = 'Please enter Email';
@@ -32,19 +28,11 @@ const SignUpScreen = ({navigation}) => {
       errors.password = 'Enter Password of 8 Characters';
     }
 
-    if (!confirmPassword) {
-      errors.password = 'Enter Password';
-    } else if (password.length < 8) {
-      errors.password = 'Enter correct Password';
-    } else if (password !== confirmPassword) {
-      errors.confirmPassword = 'Password not matched';
-    }
-
     return errors;
   };
 
   const handelRegister = () => {
-    const errors = getErrors(email, password, confirmPassword);
+    const errors = getErrors(email, password);
 
     if (Object.keys(errors).length > 0) {
       setShowError(true);
@@ -53,22 +41,15 @@ const SignUpScreen = ({navigation}) => {
     } else {
       setErrors({});
       setShowError(false);
-      // console.log('Registered');
-      handelSignIn(email, password);
+      console.log('Signed In');
     }
-  };
-
-  const handelSignIn = (email, password) => {
-    navigation.navigate('SignIn');
   };
 
   return (
     <View
       style={{
-        width: '100%',
-        height: '100%',
-        paddingVertical: 10,
-        paddingHorizontal: 10,
+        flex: 1,
+        position: 'relative',
       }}>
       <ImageBackground
         source={require('../assets/images/bg.png')}
@@ -96,11 +77,12 @@ const SignUpScreen = ({navigation}) => {
             fontWeight: '500',
             color: COLORS.black,
           }}>
-          Welcome
+          Login
         </Text>
         <View
           style={{
-            width: '100%',
+            // width: '100%',
+            marginHorizontal: 20,
           }}>
           <View
             style={{
@@ -134,76 +116,79 @@ const SignUpScreen = ({navigation}) => {
               width: '100%',
               marginBottom: 20,
             }}>
-            <TextInput
-              placeholder="Enter Password"
-              placeholderTextColor={COLORS.gray50}
-              keyboardType="visible-password"
-              value={password}
-              onChangeText={e => setPassword(e)}
-              maxLength={8}
+            <View
               style={{
-                paddingVertical: 10,
-                paddingHorizontal: 20,
-                fontSize: 14,
-                color: COLORS.black,
+                width: '100%',
                 borderRadius: 10,
                 backgroundColor: COLORS.white,
-              }}
-            />
-            {errors.password && (
-              <Text style={{fontSize: 14, color: 'red', marginTop: 4}}>
-                {errors.password}
-              </Text>
-            )}
-          </View>
-
-          <View
-            style={{
-              width: '100%',
-              marginBottom: 20,
-            }}>
-            <TextInput
-              placeholder="Confirm Password"
-              placeholderTextColor={COLORS.gray50}
-              keyboardType="visible-password"
-              value={confirmPassword}
-              onChangeText={e => setConfirmPassword(e)}
-              maxLength={8}
-              style={{
-                paddingVertical: 10,
-                paddingHorizontal: 20,
-                fontSize: 14,
-                color: COLORS.black,
-                borderRadius: 10,
-                backgroundColor: COLORS.white,
-              }}
-            />
-            {errors.confirmPassword && (
-              <Text style={{fontSize: 14, color: 'red', marginTop: 4}}>
-                {errors.confirmPassword}
-              </Text>
-            )}
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+              <TextInput
+                placeholder="Enter Password"
+                placeholderTextColor={COLORS.gray50}
+                secureTextEntry={hidePassword ? true : false}
+                keyboardType="visible-password"
+                value={password}
+                onChangeText={e => setPassword(e)}
+                maxLength={8}
+                style={{
+                  paddingVertical: 10,
+                  paddingHorizontal: 20,
+                  fontSize: 14,
+                  flex: 1,
+                  color: COLORS.black,
+                  borderRadius: 10,
+                  backgroundColor: COLORS.white,
+                }}
+              />
+              {password.length > 0 && (
+                <TouchableOpacity
+                  onPress={() => setHidePassword(!hidePassword)}
+                  activeOpacity={0.9}
+                  style={{
+                    paddingHorizontal: 10,
+                    paddingRight: 14,
+                  }}>
+                  <Ionicons
+                    name={hidePassword ? 'eye-sharp' : 'eye-off-sharp'}
+                    style={{
+                      fontSize: 20,
+                      color: COLORS.black,
+                    }}
+                  />
+                </TouchableOpacity>
+              )}
+              {errors.password && (
+                <Text style={{fontSize: 14, color: 'red', marginTop: 4}}>
+                  {errors.password}
+                </Text>
+              )}
+            </View>
           </View>
 
           <TouchableOpacity
-            onPress={() => navigation.navigate('SignIn')}
+            onPress={() => navigation.navigate('WalkthroughScreen')}
             activeOpacity={0.8}
             style={{
-              width: '100%',
+              width: '60%',
               paddingVertical: 14,
               paddingHorizontal: 20,
+              margin: 20,
               alignItems: 'center',
               justifyContent: 'center',
-              borderRadius: 10,
+              borderRadius: 30,
               elevation: 8,
               backgroundColor: COLORS.primary,
+              alignSelf: 'center',
             }}>
             <Text
               style={{
                 color: COLORS.white,
                 fontSize: 16,
               }}>
-              Register
+              Sign In
             </Text>
           </TouchableOpacity>
         </View>
@@ -230,7 +215,7 @@ const SignUpScreen = ({navigation}) => {
                 color: COLORS.black,
                 fontSize: 16,
               }}>
-              Or Continue with
+              Or login with
             </Text>
           </View>
         </View>
@@ -257,15 +242,15 @@ const SignUpScreen = ({navigation}) => {
 
         <TouchableOpacity
           activeOpacity={0.8}
-          onPress={() => navigation.navigate('SignIn')}
+          onPress={() => navigation.navigate('SignUp')}
           style={{
             width: '100%',
             alignItems: 'center',
           }}>
           <Text style={{fontSize: 14, fontWeight: 400, color: COLORS.black}}>
-            Already a User?
+            New User?
           </Text>
-          <Text style={{color: COLORS.primary}}>Sign In Now</Text>
+          <Text style={{color: COLORS.primary}}>Sign Up Now</Text>
         </TouchableOpacity>
         <View
           style={{
@@ -279,4 +264,4 @@ const SignUpScreen = ({navigation}) => {
   );
 };
 
-export default SignUpScreen;
+export default SignInScreen;

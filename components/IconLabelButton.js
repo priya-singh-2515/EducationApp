@@ -17,8 +17,6 @@ const IconLabelButton = ({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        // paddingVertical: SIZES.base,
-        // paddingHorizontal: SIZES.radius,
         ...containerStyle,
       }}
       onPress={onPress}>
